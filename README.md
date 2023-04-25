@@ -19,9 +19,33 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > * Why is it important or interesting to you?
+    A task scheduler is an interesting project idea for our team to build because we utilize some form of schedule on a daily basis. We all have some form of improvement we would like to see from our task scheduler and we feel the most invested in this topic. We are looking for something that is better tailored for juggling our schedules, while also still being a robust software that anyone can use.
+
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+    - C++
+    - Visual Studio Code
+    - Git
+    - Valgrind
+    - Vim
+    - Github
+    - Cmake
+
+
  > * What will be the input/output of your project?
+
+    Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
+
+    Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
+
+
  > * What are the features that the project provides?
+    
+    This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
+    
+    Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
+
+
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
