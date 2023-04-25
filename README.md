@@ -11,6 +11,7 @@
 ## Code/Tools used in development
 > C++, Visual Studio Code, Git, Valgrind, Vim, Github, Cmake
 
+## Inputs & Outputs
 > Inputs: Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
 
 > Outputs: Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
