@@ -4,11 +4,16 @@
 
 #ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MENU_SCREENS_H
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MENU_SCREENS_H
+class MenuScreen {
+	private:
+		vector<string> display;
 
-
-class menu_screens {
-
+		public:
+		outputMenu();
 };
 
+class StartMenu (MenuScreen) {
+
+}
 
 #endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MENU_SCREENS_H
