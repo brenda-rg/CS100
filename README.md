@@ -2,23 +2,23 @@
 
 # Kooala
 
- > Authors: [Alexandar Nguyen](https://github.com/Xander-git), [Brenda Rojas](https://github.com/brenda-rg), [Abigail Orozco B](https://github.com/aoroz064), [Iheanyichukwu Kalu-Okere](https://github.com/Ikkoding)
+ Authors: [Alexandar Nguyen](https://github.com/Xander-git), [Brenda Rojas](https://github.com/brenda-rg), [Abigail Orozco B](https://github.com/aoroz064), [Iheanyichukwu Kalu-Okere](https://github.com/Ikkoding)
 
 ## Project Description
 
-> A task scheduler is an interesting project idea for our team to build because we utilize some form of schedule on a daily basis. We all have some form of improvement we would like to see from our task scheduler and we feel the most invested in this topic. We are looking for something that is better tailored for juggling our schedules, while also still being a robust software that anyone can use.
+ A task scheduler is an interesting project idea for our team to build because we utilize some form of schedule on a daily basis. We all have some form of improvement we would like to see from our task scheduler and we feel the most invested in this topic. We are looking for something that is better tailored for juggling our schedules, while also still being a robust software that anyone can use.
 
 ## Code/Tools used in development
-> C++, Visual Studio Code, Git, Valgrind, Vim, Github, Cmake
+ C++, Visual Studio Code, Git, Valgrind, Vim, Github, Cmake
 
 ## Inputs & Outputs
-> Inputs: Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
+ Inputs: Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
 
-> Outputs: Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
+ Outputs: Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
 
 ## Features
-> This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
-> Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
+This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
+Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
