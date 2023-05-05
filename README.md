@@ -42,6 +42,7 @@ The drawn illustration demonstrates how the user will navigate through the progr
 
 ## Class Diagram
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+![UML (1)](https://user-images.githubusercontent.com/129914485/236576054-7080ea57-8191-4227-b16d-f9c86b6b13b9.jpg)
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
