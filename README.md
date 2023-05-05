@@ -35,7 +35,6 @@ Depending on time constraints we may also implement GUI for easier inputting, cu
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
 ![User Navigation Diagram](https://user-images.githubusercontent.com/129914485/236547397-c2e2ad40-c8bc-43a8-b3f8-447914ab99c4.jpg)
 The drawn illustration demonstrates how the user will navigate through the program as it’s executed. The user will run the program and come into a start menu. There, the user will have one of the 2 options, either going into the To-Do list or into Settings. At that point, the user will have the ability to perform specific actions depending on the option they decide to select. The user will be able to perform actions such as adding tasks, editing tasks, or turning off and on features in Settings. The user will then be able to exit back to the start menu or exit the program. 
 ### Screen Layouts
