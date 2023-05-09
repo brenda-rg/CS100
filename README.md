@@ -20,25 +20,14 @@
 This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
 Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
 
- > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
 ## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
+(https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
 ![User Navigation Diagram](https://user-images.githubusercontent.com/129914485/236547397-c2e2ad40-c8bc-43a8-b3f8-447914ab99c4.jpg)
 The drawn illustration demonstrates how the user will navigate through the program as it’s executed. The user will run the program and come into a start menu. There, the user will have one of the 2 options, either going into the To-Do list or into Settings. At that point, the user will have the ability to perform specific actions depending on the option they decide to select. The user will be able to perform actions such as adding tasks, editing tasks, or turning off and on features in Settings. The user will then be able to exit back to the start menu or exit the program. 
+
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 ![Screen Layout-1](https://user-images.githubusercontent.com/129914320/236967535-13452a1f-275b-4388-8fa8-1183ea2331e0.png)
 ![Screen Layout-2](https://user-images.githubusercontent.com/129914320/236967560-816a9616-5071-4fa3-9757-4fd2194b4894.png)
 ![Screen Layout-3](https://user-images.githubusercontent.com/129914320/236967573-38e2d09f-8bba-4e68-b3dc-2db43fb92866.png)
