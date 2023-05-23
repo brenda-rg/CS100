@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.21)
-project(final_project_broja016_aoroz064_anguy344_ikalu001)
+project(Kooala)
 
+set(CMAKE_CURRENT_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(header)
+add_subdirectory(lib/sqlite3)
 
-add_executable(final_project_broja016_aoroz064_anguy344_ikalu001
-        header/BaseMenu.h
-        header/KooalaText.h
+
+add_executable(Kooala
         src/BaseMenu.cpp
         src/KooalaText.cpp
-        src/main.cpp)
+        src/main.cpp
+        )
+
+target_link_libraries(Kooala PRIVATE sqlite3)
+

@@ -25,7 +25,7 @@ void KooalaText::setPrepend(string new_val){
 		this->prepend = move(new_val);
 	}
 	else {
-		throw invalid_argument("KooalaText Prepend size cannot be larger than 5")
+		throw invalid_argument("KooalaText Prepend size cannot be larger than 5");
 	}
 }
 
@@ -46,12 +46,19 @@ string KooalaText::getTrunc(int width_limit) {
 		return txt;
 	}
 }
+
 /*
 vector<string> KooalaText::getCont(int width_limit){
-	if (widht_limit>)
+	txt = this->prepend + this->text;
+	if ((txt.size())>width_limit)
 	int txt_limit = width_limit - (this->prepend.size());
 	string first_line = this->text.substr(0, txt_limit-1) + "-";
 	vector<string> cont;
 	cont.push_back(first_line);
+	string tmp = "";
+	for (int i=0;i<this->prepend.size();++i){
+		tmp+=" ";
+	}
+	for(int i=)
 }
-*/
+ */

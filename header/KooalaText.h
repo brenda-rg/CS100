@@ -34,7 +34,7 @@ class KooalaText {
 		string getTrunc(int width_limit);
 
 		// returns the prepend + text continued onto the next line (removes n-1 text)
-		vector<string> getCont(int width_limit);
+		// vector<string> getCont(int width_limit);
 
 };
 
