@@ -48,8 +48,7 @@ The UML diagram includes the sequence in which our project will flow from beginn
  >   * For each update in your class diagram, you must explain in 3-4 sentences:
 
 The solid principles that were applied to the new UML diagram were the single responsibility principle and the interface segregation principle. We applied SRP to our classes and applied the interface segregation principle to our task scheduler in regard to our features. These soild principles helped organize our UML and made it easier to begin working on code. 
-We modified our UML so that our classes only had a signle responsibility for our task scheduler so that changes could only be made in specific code. We applied this by creating new classes and rearranging functions in the classes.  
-By using ISP, the user can decide whether or not they want to turn on the provided features, giving them the option to costumize their scheduler rather than forcing the features to remain on. 
+We modified our UML so that our classes only had a signle responsibility for our task scheduler so that changes could only be made in specific code. We applied this by creating new classes and rearranging functions in the classes. By using ISP, the user can decide whether or not they want to turn on the provided features, giving them the option to costumize their scheduler rather than forcing the features to remain on. 
 This new version of our UML helped us brekadown our code to simplify each class and its responsibility contained. The updated UML gave us a better understanding of how our code was going to flow in terms of the user aspect. By doing so, we were able to plan the workflow we wanted to accomplish for our sprints. 
 
  > * Perform a new sprint plan like you did in Phase II.
