@@ -34,7 +34,9 @@ The drawn illustration demonstrates how the user will navigate through the progr
 
 ## Class Diagram
 The UML diagram includes the sequence in which our project will flow from beginning to end. Our first class will be the beginning of the program which will start with the start_program class. In this function, we will begin the task scheduler and go into the Start_Menu class. Once we go into the Start_Menu class, we will prompt the user to enter a username and password with the corresponding functions listed. The LoginMenu will be dependent on the Start_Menu function and will collect the database information from the user. The task scheduler will then go into the  UserProfiletable class that will have a vector to fill in the user table with the information inputted in the loginMenu class. The User class will then validate that the user will input a proper username and password and jump into the listCollection class where functions of different lists will be called. The user will have the ability to see the most recent list, the task list due today, and a full view of a task list. This class will jump into the Task class and TaskList where the user will be able to edit the name of the task, the date, the description, add a task or add a form with the provided functions in these classes. This class will then set flags using an enumeration function that will check what dates the task is due and then exit out of the program as prompted. The User class can also access the SettingsMenu class, which is able to change or output the current settings of the program. 
-![UML (1)](https://user-images.githubusercontent.com/129914485/236576054-7080ea57-8191-4227-b16d-f9c86b6b13b9.jpg)
+![UML](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/d2cf9de3-5934-4252-9fdb-790212cef40f)
+![UML (2)](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/9fc8bfd2-5b81-475d-abcd-eb2df091de03)
+
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
@@ -45,8 +47,12 @@ The UML diagram includes the sequence in which our project will flow from beginn
  >   * A new class diagram incorporating your changes after considering the SOLID principles.
  >   * For each update in your class diagram, you must explain in 3-4 sentences:
  >     * What SOLID principle(s) did you apply?
+ >     The solid principles that were applied to the new UML diagram were the single responsibility principle and the interface segregation principle. We applied SRP to our classes and applied the interface segregation principle to our task scheduler in regard to our features. These soild principles helped organize our UML and made it easier to begin working on code. 
  >     * How did you apply it? i.e. describe the change.
+ >     We modified our UML so that our classes only had a signle responsibility for our task scheduler so that changes could only be made in specific code. We applied this by creating new classes and rearranging functions in the classes.  
+ >      By using ISP, the user can decide whether or not they want to turn on the provided features, giving them the option to costumize their scheduler rather than forcing the features to remain on. 
  >     * How did this change help you write better code?
+ >     This new version of our UML helped us brekadown our code to simplify each class and its responsibility contained. The updated UML gave us a better understanding of how our code was going to flow in terms of the user aspect. By doing so, we were able to plan the workflow we wanted to accomplish for our sprints. 
  > * Perform a new sprint plan like you did in Phase II.
  > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
  
