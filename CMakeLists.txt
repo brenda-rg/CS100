@@ -11,6 +11,10 @@ add_executable(Kooala
         src/KooalaText.cpp
         src/main.cpp
         )
+add_executable(Task
+        src/main.cpp
+        src/TaskBase.cpp
+)
 
 target_link_libraries(Kooala PRIVATE sqlite3)
 

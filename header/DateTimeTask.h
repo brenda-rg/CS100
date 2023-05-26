@@ -1,20 +1,21 @@
 #ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_DATETIMETASK_H
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_DATETIMETASK_H
 
-#include "../header/KooalaText.h"
+//#include "../header/KooalaText.h"
 #include "../header/TaskBase.h"
 
 class DateTimeTask : public TaskBase {
 	private:
-		bool has_date;
+        bool has_date;
         int year;
         int month;
         int day;
         int hour;
         int minute;
 
-		public:
+	public:
         DateTimeTask();
+        DateTimeTask(TaskBase&);
         void addDate(string);
         void addTime(string);
 

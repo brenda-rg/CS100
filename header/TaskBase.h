@@ -1,14 +1,17 @@
 #ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_H
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_H
 
-#include "../header/KooalaText.h"
+#include <iostream>
+#include <string>
+//#include "../header/KooalaText.h"
 //also include sql class
+using namespace std;
 
 class TaskBase {
 	private:
 		int task_id;
-        string task_name;
         int generate_id();
+        string task_name;
 
 		public:
         TaskBase();
