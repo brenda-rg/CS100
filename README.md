@@ -37,29 +37,11 @@ The UML diagram includes the sequence in which our project will flow from beginn
 ![UML](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/d2cf9de3-5934-4252-9fdb-790212cef40f)
 ![UML (2)](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/9fc8bfd2-5b81-475d-abcd-eb2df091de03)
 
- 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
-
 The solid principles that were applied to the new UML diagram were the single responsibility principle and the interface segregation principle. We applied SRP to our classes and applied the interface segregation principle to our task scheduler in regard to our features. These soild principles helped organize our UML and made it easier to begin working on code. 
 We modified our UML so that our classes only had a signle responsibility for our task scheduler so that changes could only be made in specific code. We applied this by creating new classes and rearranging functions in the classes. By using ISP, the user can decide whether or not they want to turn on the provided features, giving them the option to costumize their scheduler rather than forcing the features to remain on. 
+
 This new version of our UML helped us brekadown our code to simplify each class and its responsibility contained. The updated UML gave us a better understanding of how our code was going to flow in terms of the user aspect. By doing so, we were able to plan the workflow we wanted to accomplish for our sprints. 
-
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
  
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
