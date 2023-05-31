@@ -1,5 +1,4 @@
 #include "../header/DateTimeTask.h"
-#include "../header/TaskBase.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -8,6 +7,8 @@
 using namespace std;
 
 DateTimeTask::DateTimeTask() {
+    task_name = "";
+    task_id = 0;
     has_date = 0;
     year = 0;
     month = 0;
@@ -16,6 +17,8 @@ DateTimeTask::DateTimeTask() {
     minute = 0;
 }
 DateTimeTask::DateTimeTask(TaskBase& oldTask) {
+    task_name = oldTask.get_name();
+    task_id = oldTask.get_id();
     has_date = 0;
     year = 0;
     month = 0;
@@ -31,11 +34,19 @@ DateTimeTask::DateTimeTask(TaskBase& oldTask) {
 
 void DateTimeTask::addDate(string date) {
     
-    char parsedDate[date.size() +1];
+    char parsedDate[date.size()+1];
     for(int i = 0; i < date.size() ; ++i) {
         parsedDate[i] = date.at(i);
     }
-    sscanf(parsedDate, "%2d/%2d/%4d" , month, day, year);
+    int  m;
+    int d;
+    int y;
+    sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
+    month = m;
+    year = y;
+    day = d;
+    //validate date(m,y,d) //functions to validate
+    //look at
     has_date = 1;
 }
 
@@ -43,5 +54,11 @@ void DateTimeTask::addTime(string time) {
     cout << endl
     << "--STUB--"
     << "FINISH addTime() function"
+    << endl;
+}
+
+void DateTimeTask::get_date() {
+    cout << endl
+    << month << "/" << day << "/" << year
     << endl;
 }
