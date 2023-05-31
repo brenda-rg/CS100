@@ -1,6 +1,8 @@
+#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_CPP
+#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_CPP
+
 #include "../header/TaskBase.h"
 
-using namespace std;
 
 TaskBase::TaskBase() {
     task_id = 0;
@@ -31,3 +33,5 @@ string TaskBase::get_name() {
 int TaskBase::get_id() {
     return this->task_id;
 }
+
+#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_CPP

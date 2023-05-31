@@ -11,13 +11,13 @@ class TaskBase {
 		int task_id;
         string task_name;
         int generate_id();
-        int get_id();
 
 		public:
         TaskBase();
         TaskBase(string);
         void set_name(string);
         string get_name();
+        int get_id();
 
 };
 
