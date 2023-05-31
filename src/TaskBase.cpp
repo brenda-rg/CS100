@@ -1,7 +1,4 @@
-#include <iostream>
 #include "../header/TaskBase.h"
-#include "../header/KooalaText.h"
-#include "../src/KooalaText.cpp"
 
 using namespace std;
 

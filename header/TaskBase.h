@@ -3,22 +3,21 @@
 
 #include <iostream>
 #include <string>
-//#include "../header/KooalaText.h"
 //also include sql class
 using namespace std;
 
 class TaskBase {
-	private:
+	protected:
 		int task_id;
-        int generate_id();
         string task_name;
+        int generate_id();
+        int get_id();
 
 		public:
         TaskBase();
         TaskBase(string);
         void set_name(string);
         string get_name();
-        int get_id();
 
 };
 
