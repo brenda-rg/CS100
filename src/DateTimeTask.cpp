@@ -43,11 +43,12 @@ void DateTimeTask::addDate(string date) {
     int y;
     sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
     if(VerifyDate::verify_monthDayYear(y,m,d) ) {
-        month = 
+        month  = m;
+        year = y;
+        day = d;
+        has_date = 1;
     }
-    //validate date(m,y,d) //functions to validate
-    //look at
-    has_date = 1;
+    else {has_date = 0;}
 }
 
 void DateTimeTask::addTime(string time) {
