@@ -42,9 +42,9 @@ void DateTimeTask::addDate(string date) {
     int d;
     int y;
     sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
-    month = m;
-    year = y;
-    day = d;
+    if(VerifyDate::verify_monthDayYear(y,m,d) ) {
+        month = 
+    }
     //validate date(m,y,d) //functions to validate
     //look at
     has_date = 1;
