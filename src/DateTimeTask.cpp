@@ -42,7 +42,8 @@ void DateTimeTask::addDate(string date) {
     int d;
     int y;
     sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
-    if(VerifyDate::verify_monthDayYear(y,m,d) ) {
+    VerifyDate verify;
+    if(verify.verify_monthDayYear(y,m,d) ) {
         month  = m;
         year = y;
         day = d;
