@@ -19,6 +19,7 @@ class Tag {
         Tag(int , string);
         //modifiers
         //void set_tag(string);
+        void set_tagId(int);
         //accessors
         string get_tag();
         int get_id();

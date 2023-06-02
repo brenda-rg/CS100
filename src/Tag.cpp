@@ -7,7 +7,7 @@
 using namespace std;
 
 Tag::Tag() {
-    tag_id = 0
+    tag_id = 0;
     tag_name = "";
 }
 
@@ -16,12 +16,12 @@ Tag::Tag(string tagName) {
     tag_name = tagName;
 }
 
-Tag::Tag(int tagListSize, string tagName) {
-    tag_id = tagId;
+Tag::Tag(int tags_size, string tagName) {
+    tag_id = tags_size;
     tag_name = tagName;
 }
 //modifiers
-void set_tagId(int newId) {
+void Tag::set_tagId(int newId) {
     tag_id = newId;
 }
 //accessors

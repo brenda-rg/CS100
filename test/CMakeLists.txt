@@ -13,6 +13,10 @@ add_executable(runAllTests
     testDateTimeTask.cpp
     ../src/VerifyDate.cpp
     testVerifyDate.cpp
+    ../src/Tag.cpp
+    testTag.cpp
+    ../src/TagTask.cpp
+    testTagTask.cpp
 )
 
 add_executable(taskTest
@@ -31,4 +35,15 @@ add_executable(verifyDateTest
     ../src/VerifyDate.cpp
     testVerifyDate.cpp
 )
+add_executable(tagTest
+    ../src/Tag.cpp
+    testTag.cpp
+)
+# add_executable(tagTaskTest
+#     ../src/TagTask.cpp
+#     ../src/Tag.cpp
+#     ../src/DateTimeTask.cpp
+#     ../src/TaskBase.cpp
+#     testTagTask.cpp
+# )
 

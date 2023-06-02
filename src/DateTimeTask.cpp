@@ -23,6 +23,14 @@ DateTimeTask::DateTimeTask(TaskBase* oldTask) {
     this->month = 0;
     this->day = 0;
 }
+DateTimeTask::DateTimeTask(string date) {
+    this->task_name = "";
+    this->task_id = 0;
+    this->add_date(date);
+    if(!(this->has_date)) {
+        throw out_of_range("Enter valid date format mm/dd/yyy");
+    }
+}
 
 DateTimeTask::~DateTimeTask(){}
 
