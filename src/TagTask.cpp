@@ -35,20 +35,13 @@ void TagTask::add_tag(string name) {
 }
 
 void TagTask::delete_tag(string name) {
-    for (vector<Tag>::iterator it = tags.begin(); it != tags.end();)
-    {
-        if (name == it->get_tag()){
-            it = tags.erase(it);
-            if(tags_size > 1) {
-                --(this->tags_size);
-            }
-            else {
-                this->tags_size = 0;
-            }
-        }
-        else {
-            ++it;
-        }
+    vector<Tag>::iterator it = find_tag(name);
+    it = tags.erase(it);
+    if(tags_size > 1) {
+        --(this->tags_size);
+    }
+    else {
+        this->tags_size = 0;
     }
 }
 //accessors
@@ -61,8 +54,17 @@ void TagTask::display_tags() {
     cout << endl;
 }
 
-int TagTask::find_tag(string) {
-    return -1;
+vector<Tag>::iterator TagTask::find_tag(string name) {
+    for (vector<Tag>::iterator it = tags.begin(); it != tags.end();)
+    {
+        if (name == it->get_tag()){
+            return it;
+        }
+        else {
+            ++it;
+        }
+    }
+    throw invalid_argument("tag not found, please enter valid tag to delete");
 }
 
 
