@@ -13,8 +13,10 @@ class DateTimeTask : public TaskBase {
 
 	public:
         DateTimeTask();
-        DateTimeTask(TaskBase&);
-        void addDate(string);
+        DateTimeTask(TaskBase*);
+        ~DateTimeTask();
+        //functions
+        void add_date(string);
         string get_date();
 };
 

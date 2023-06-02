@@ -1,4 +1,5 @@
 #include "../header/DateTimeTask.h"
+#include "../header/VerifyDate.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -7,24 +8,30 @@
 using namespace std;
 
 DateTimeTask::DateTimeTask() {
-    task_name = "";
-    task_id = 0;
-    has_date = 0;
-    year = 0;
-    month = 0;
-    day = 0;
+    this->task_name = "";
+    this->task_id = 0;
+    this->has_date = 0;
+    this->year = 0;
+    this->month = 0;
+    this->day = 0;
 }
-DateTimeTask::DateTimeTask(TaskBase& oldTask) {
-    task_name = oldTask.get_name();
-    task_id = oldTask.get_id();
-    has_date = 0;
-    year = 0;
-    month = 0;
-    day = 0;
+DateTimeTask::DateTimeTask(TaskBase* oldTask) {
+    this->task_name = oldTask->get_name();
+    this->task_id = oldTask->get_id();
+    this->has_date = 0;
+    this->year = 0;
+    this->month = 0;
+    this->day = 0;
 }
 
-void DateTimeTask::addDate(string date) {
-    
+DateTimeTask::~DateTimeTask(){}
+
+//** NOTE FOR INPUT CREATOR **
+//make sure it is input as "mm/dd/yyyy"
+//or at least "m/d/yyyy"
+
+//**NOTE** may want to make return bool so that if date invalid it asks for input again
+void DateTimeTask::add_date(string date) {
     char parsedDate[date.size()+1];
     for(int i = 0; i < date.size() ; ++i) {
         parsedDate[i] = date.at(i);
@@ -35,19 +42,16 @@ void DateTimeTask::addDate(string date) {
     sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
     
     VerifyDate verify;
-    if(verify.verify_monthDayYear(y,m,d) ) {
-        month  = m;
-        year = y;
-        day = d;
-        has_date = 1;
+    if(verify.verify_monthDayYear(m,d,y) ) {
+        this->month  = m;
+        this->year = y;
+        this->day = d;
+        this->has_date = 1;
     }
-    else {has_date = 0;}
+    else {this->has_date = 0;}
 }
 
 string DateTimeTask::get_date() {
-    int m = month;
-    int d = day;
-    int y = year;
-    string date = to_string(m) + "/" + to_string(d) + "/" + to_string(y);
-    return date;
+    //**NOTE** can also make a string object in the class that just does this
+    return to_string(this->month) + "/" + to_string(this->day) + "/" + to_string(this->year);
 }
