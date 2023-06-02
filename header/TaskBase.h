@@ -13,9 +13,14 @@ class TaskBase {
         int generate_id();
 
 		public:
+        //constuctors
         TaskBase();
         TaskBase(string);
+        //destructor
+        ~TaskBase();
+        //modifiers
         void set_name(string);
+        //accessors
         string get_name();
         int get_id();
 

@@ -13,8 +13,6 @@ DateTimeTask::DateTimeTask() {
     year = 0;
     month = 0;
     day = 0;
-    hour = 0;
-    minute = 0;
 }
 DateTimeTask::DateTimeTask(TaskBase& oldTask) {
     task_name = oldTask.get_name();
@@ -23,14 +21,7 @@ DateTimeTask::DateTimeTask(TaskBase& oldTask) {
     year = 0;
     month = 0;
     day = 0;
-    hour = 0;
-    minute = 0;
 }
-
-// ask user to enter date as "mm/dd/yyyy"
-// or ask for each part individually and we change the inputs
-// have a different function for validaiton 
-// (maybe even a class for date validation)
 
 void DateTimeTask::addDate(string date) {
     
@@ -42,6 +33,7 @@ void DateTimeTask::addDate(string date) {
     int d;
     int y;
     sscanf(parsedDate, "%2d/%2d/%4d" , &m, &d, &y);
+    
     VerifyDate verify;
     if(verify.verify_monthDayYear(y,m,d) ) {
         month  = m;
@@ -52,15 +44,10 @@ void DateTimeTask::addDate(string date) {
     else {has_date = 0;}
 }
 
-void DateTimeTask::addTime(string time) {
-    cout << endl
-    << "--STUB--"
-    << "FINISH addTime() function"
-    << endl;
-}
-
-void DateTimeTask::get_date() {
-    cout << endl
-    << month << "/" << day << "/" << year
-    << endl;
+string DateTimeTask::get_date() {
+    int m = month;
+    int d = day;
+    int y = year;
+    string date = to_string(m) + "/" + to_string(d) + "/" + to_string(y);
+    return date;
 }

@@ -10,16 +10,12 @@ class DateTimeTask : public TaskBase {
         int year;
         int month;
         int day;
-        int hour;
-        int minute;
 
 	public:
         DateTimeTask();
         DateTimeTask(TaskBase&);
         void addDate(string);
-        void addTime(string);
-        void get_date();
-
+        string get_date();
 };
 
 
