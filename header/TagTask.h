@@ -23,7 +23,7 @@ class TagTask : public DateTimeTask {
         void add_tag(string);
         void delete_tag(string);
         //accessors
-        void display_tags();
+        string display_tags();
         vector<Tag>::iterator find_tag(string);
 
 };
