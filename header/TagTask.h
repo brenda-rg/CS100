@@ -16,7 +16,7 @@ class TagTask : public DateTimeTask {
 		public:
         //constuctors
         TagTask();
-        TagTask(TaskBase*);
+        TagTask(DateTimeTask*);
         //TagTask(DateTimeTask*);
         ~TagTask();
         //modifiers
