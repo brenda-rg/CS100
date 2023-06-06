@@ -56,13 +56,13 @@ string DateTimeTask::get_date() {
     return to_string(this->month) + "/" + to_string(this->day) + "/" + to_string(this->year);
 }
 
-string DateTimeTask::get_year() {
+int DateTimeTask::get_year() {
     return this->year;
 }
-string DateTimeTask::get_month() {
+int DateTimeTask::get_month() {
     return this->month;
 }
-string DateTimeTask::get_day() {
+int DateTimeTask::get_day() {
    return this->day;
    
 }
