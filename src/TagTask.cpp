@@ -18,7 +18,7 @@ TagTask::TagTask(DateTimeTask* oldTask)  {
     this->tags_size = 0;
     this->task_id = 0;
     this->task_name = oldTask->get_name();
-    //this->has_date = oldTask->get_status();
+    this->has_date = oldTask->get_status() == "Completed" ? 1:0;
     this->year = oldTask->get_year();
     this->month = oldTask->get_month();
     this->day = oldTask->get_day();
@@ -33,30 +33,30 @@ void TagTask::add_tag(string name) {
         this->tags.push_back(newTag);
         ++(this->tags_size);
     }
-    //remove when figure out i/o stuff
     else {
         throw out_of_range("Too many tags, please delete one before adding");
     }
 }
 
 void TagTask::delete_tag(string name) {
-    vector<Tag>::iterator it = find_tag(name);
-    it = tags.erase(it);
-    if(tags_size > 1) {
+    if(tags_size > 0) {
+        vector<Tag>::iterator it = find_tag(name);
+        it = tags.erase(it);
         --(this->tags_size);
     }
     else {
-        this->tags_size = 0;
+        throw invalid_argument("No tags present, cannot delete");
     }
 }
 //accessors
-void TagTask::display_tags() {
+//change to fit UI
+string TagTask::display_tags() {
+    string allTasks = "TAGS: ";
     for(int i = 0; i < tags_size; ++i) {
-        cout << "TAGS: " 
-        << tags.at(i).get_tag()
-        << " ";
+        allTasks += tags.at(i).get_tag();
+        allTasks = (i == tags_size-1) ? allTasks : allTasks + ", ";
     }
-    cout << endl;
+    return allTasks;
 }
 
 vector<Tag>::iterator TagTask::find_tag(string name) {
