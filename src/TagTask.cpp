@@ -18,7 +18,7 @@ TagTask::TagTask(DateTimeTask* oldTask)  {
     this->tags_size = 0;
     this->task_id = 0;
     this->task_name = oldTask->get_name();
-    this->has_date = oldTask->get_status();
+    //this->has_date = oldTask->get_status();
     this->year = oldTask->get_year();
     this->month = oldTask->get_month();
     this->day = oldTask->get_day();
