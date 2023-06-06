@@ -17,6 +17,12 @@ TagTask::TagTask() {
 TagTask::TagTask(TaskBase* oldTask)  {
     this->tags_size = 0;
     this->task_name = oldTask->get_name();
+    //this->is_done = oldTask->get_status();
+    //are we always making sure that the one passed in to tag task is a datetimetask
+    this->has_date = 0;
+    this->year = 0;
+    this->month = 0;
+    this->day = 0;
 }
 
 TagTask::~TagTask() {}
