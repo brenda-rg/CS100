@@ -10,6 +10,9 @@ class DateTimeTask : public TaskBase {
         int year;
         int month;
         int day;
+        int get_month();
+        int get_year();
+        int get_day();
 
 	public:
         DateTimeTask();

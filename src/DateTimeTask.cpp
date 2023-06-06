@@ -55,3 +55,14 @@ string DateTimeTask::get_date() {
     //**NOTE** can also make a string object in the class that just does this
     return to_string(this->month) + "/" + to_string(this->day) + "/" + to_string(this->year);
 }
+
+string DateTimeTask::get_year() {
+    return this->year;
+}
+string DateTimeTask::get_month() {
+    return this->month;
+}
+string DateTimeTask::get_day() {
+   return this->day;
+   
+}
