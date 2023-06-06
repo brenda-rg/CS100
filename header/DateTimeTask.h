@@ -10,9 +10,6 @@ class DateTimeTask : public TaskBase {
         int year;
         int month;
         int day;
-        int get_month();
-        int get_year();
-        int get_day();
 
 	public:
         DateTimeTask();
@@ -21,6 +18,9 @@ class DateTimeTask : public TaskBase {
         //functions
         void add_date(string);
         string get_date();
+        int get_month();
+        int get_year();
+        int get_day();
 };
 
 
