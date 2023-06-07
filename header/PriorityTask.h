@@ -3,6 +3,7 @@
 
 //also include sql class
 #include <iostream>
+#include <vector>
 #include "TagTask.h"
 
 using namespace std;

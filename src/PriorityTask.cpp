@@ -8,10 +8,10 @@
 using namespace std;
 //constuctors
 PriorityTask::PriorityTask() {
-    tthis->priority = -1;
-    this->tags_size = 0
+    this->priority = -1;
+    this->tags_size = 0;
     this->task_id = 0;
-    this->task_name = ""
+    this->task_name = "";
     this->has_date = 0;
     this->year = 0;
     this->month = 0;
