@@ -1,5 +1,5 @@
-#ifndef MAINMENU_H
-#define MAINMENU_H
+#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MAINMENU_H
+#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MAINMENU_H
 
 #include <iostream>
 #include <string>
@@ -35,4 +35,4 @@ class task: public MainMenu{
 class screencleared: public MainMenu {
     public:
     void screencleared();
-}
+};
