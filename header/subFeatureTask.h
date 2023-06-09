@@ -20,6 +20,7 @@ public:
 
 private:
     const int limit_per_subfeat = 50;
+    subfeat_00 = vector<*SubFeat
     
 
 };
