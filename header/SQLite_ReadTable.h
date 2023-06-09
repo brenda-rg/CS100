@@ -1,5 +1,3 @@
-
-
 #ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_SQLITE_READTABLE_H
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_SQLITE_READTABLE_H
 
@@ -17,8 +15,6 @@ using namespace std;
 
 class SQLite_ReadTable: public DatabaseConnect {
 	private:
-		string table_name;
-
 		friend int callback(void* data, int argc, char **argv, char **azColName);
 		/** (Class Variable Private)
 		 * callback
@@ -26,9 +22,8 @@ class SQLite_ReadTable: public DatabaseConnect {
 		 * desc: callback function for use by sqlite3_exec. The function is called to handle any data read in from the database
 		 */
 
-
-
 	protected:
+		string table_name;
 
 		vector<vector<string>> data;
 		/** (Class Variable Protected)
@@ -81,9 +76,26 @@ class SQLite_ReadTable: public DatabaseConnect {
 		 * Contains error messages from the execute function if there are any
 		 */
 
-		void execute(string sql_query, bool use_callback);
+		vector<int> sqlite_query_status;
+		/**
+		 * desc: Contains the status of the execution statement.
+		 * References: https://www.sqlite.org/rescode.html
+		 */
+
+
+
+
+public:
+		SQLite_ReadTable(string table_name, string db_filename)
+		: DatabaseConnect::DatabaseConnect(db_filename),  table_name(table_name) {}
+
+		int execute(string sql_query, bool use_callback);
 		/** (Class Function Protected)
 		 * void execute(string sql_query, bool use_callback = false)
+		 *
+		 * parameter:
+		 * string sql_query : SQL query command in string form
+		 * string use_callback = "" : Default Value = false. The callback function is used only for select command
 		 *
 		 * desc:
 		 * Executes an sqlite query command to the database ignoring the table declared in the constructor.
@@ -91,16 +103,10 @@ class SQLite_ReadTable: public DatabaseConnect {
 		 * Any select is loaded into the function. If use_callback is true then the sqlite3_exec command uses
 		 * the callback function (Used for select, otherwise usually not used).
 		 *
-		 * parameter:
-		 * string sql_query : SQL query command in string form
+
 		 */
 
-
-public:
-		SQLite_ReadTable(string table_name, string db_filename)
-		: DatabaseConnect::DatabaseConnect(db_filename),  table_name(table_name) {}
-
-		void selectAll();
+		int selectAll();
 		/** (Class Function Public)
 		 * selectAll();
 		 *
@@ -110,7 +116,7 @@ public:
 		 * For large tables the runtime and in-program memory usage is expensive.
 		 */
 
-		void select(string col_names,string query_filter);
+		int select(string col_names,string query_filter, string other_flags);
 		/** (Class Function Public)
 		 * select(string query_filter)
 		 *
@@ -124,9 +130,10 @@ public:
 		 * Parameters:
 		 * string col_names : column names in string form. Use "*" to get all the column values
 		 * string query_filter : string with SQL Boolean Phrase
+		 * string other_flags="": Optional input to add more flags to the select query.
 		 */
 
-		void dumpData();
+		int dumpData();
 		/** (Class Function Public)
 		 * dumpData()
 		 *

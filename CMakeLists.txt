@@ -11,8 +11,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 add_executable(Kooala
         src/KooalaText.cpp
         src/main.cpp
+        lib/logger/Logger.cpp
         src/SQLite_DatabaseConnect.cpp
         src/SQLite_ReadTable.cpp
+        src/SQLite_CreateTable.cpp
+        src/SQLite_WriteTable.cpp
         )
 
 add_subdirectory(lib/sqlite_tarball)
@@ -21,4 +24,3 @@ target_include_directories(Kooala PUBLIC
         "${PROJECT_BINARY_DIR}"
         "${PROJECT_SOURCE_DIR}/lib/sqlite_tarball"
         )
-

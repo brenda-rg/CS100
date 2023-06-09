@@ -1,25 +1,21 @@
+#include "../header/SQLite_CreateTable.h"
 
 #include<string>
 #include<sqlite3>
 #include<cstdio>
 #include<stdexcept>
+#include<assert.h>
 
-#include "../header/SQLite_CreateTable.h"
 
 using namespace std;
 
 // https://www.tutorialspoint.com/sqlite/sqlite_c_cpp.htm
 
 
-void SQLite_BaseTable::createNewTable(string table_name, vector<string> vars) {
-	if (!(this->connection_check)){
-		this->openConnection();
-	}
-	if (vars.sz() < 1) {
-		throw invalid_argument("Variable Vector for Table Creation has a size less than one");
-	}
+void SQLite_CreateTable::createNewTable(vector<string> vars) {
+	assert(vars.sz()>0);
 
-	string createTableQuery = "CREATE TABLE IF NOT EXISTS " + table_name + "(" + vars.front();
+	string createTableQuery = "CREATE TABLE IF NOT EXISTS " + this->table_name + "(" + vars.front();
 	if (vars.sz() > 2) {
 		createTableQuery += ","
 		for (int i = 1; i < vars.sz() - 1; ++i) {
@@ -32,10 +28,12 @@ void SQLite_BaseTable::createNewTable(string table_name, vector<string> vars) {
 	createTableQuery += " );";
 
 	string errorMessage;
-	int attempt_TableCreation = sqlite3_exec(this->db, createTableQuery, nullptr, 0, &errorMessage);
-	if (attempt_TableCreation!=SQLITE_OK) {
-		// cout << "Error creating table: " << errorMessage << std::endl;
-		sqlite3_free(errorMessage);
-	}
-	this->closeConnection();
+
+
+	int query_status = this->execute(createTableQuery)
+}
+
+bool SQLite_CreateTable::checkExist() {
+	string sql_query = "select count(type) from sqlite_master where type='table' and name='" + this->table_name +"';";
+	this->execute(sql_query);
 }

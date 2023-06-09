@@ -1,8 +1,11 @@
+#include "../header/SQLite_ReadTable.h"
+
 #include<string>
 #include<sqlite3.h>
 #include<vector>
+#include<stdexcept>
+#include<assert.h>
 
-#include "../header/SQLite_ReadTable.h"
 #include"../header/SQLite_DatabaseConnect.h"
 
 using namespace std;
@@ -33,36 +36,39 @@ int callback(void *object, int argc, char **argv, char **azColName) {
 	return 0;
 }
 
-void SQLite_ReadTable::execute(string sql_query, bool use_callback= false){
+int SQLite_ReadTable::execute(string sql_query, bool use_callback = false){
 	if (!(this->checkConnection())){
 		this->openConnection();
 	}
 
 	char *zErrMsg = 0;
-	int attempt_exec;
 	//const char* data = "Callback function called";
 
-	attempt_exec = sqlite3_exec(
+	int query_status = sqlite3_exec(
 			this->db, sql_query.c_str(), callback,
 			static_cast<void*>(this), &zErrMsg
 			);
+	assert(query_status==0);
+	this->sqlite_query_status.push_back(query_status);
+	// https://www.sqlite.org/rescode.html
+
 	string error_message = zErrMsg ? zErrMsg : "NULL";
 	this->error_messages.push_back(error_message);
 
 	if (this->checkConnection()){
 		this->closeConnection();
 	}
-	return;
+	return query_status;
 }
 
-void SQLite_ReadTable::selectAll() {
+int SQLite_ReadTable::selectAll() {
 	this->dumpData();
 	string sql_cmd = "SELECT * FROM " + this->table_name + ";";
-	this->execute(sql_cmd, true);
-	return;
+	int query_status = this->execute(sql_cmd, true);
+	return query_status;
 }
 
-void SQLite_ReadTable::select(string col_names, string query_filter="") {
+int SQLite_ReadTable::select(string col_names, string query_filter="") {
 	this->dumpData();
 	string sql_cmd = "SELECT " + col_names + " FROM " + this->table_name;
 	if (query_filter=="") {
@@ -70,11 +76,11 @@ void SQLite_ReadTable::select(string col_names, string query_filter="") {
 	} else {
 		sql_cmd+=" WHERE " + query_filter + ";";
 	}
-	this->execute(sql_cmd, true);
-	return;
+	int query_status = this->execute(sql_cmd, true);
+	return query_status;
 }
 
-void SQLite_ReadTable::dumpData() {
+int SQLite_ReadTable::dumpData() {
 	this->data.clear();
 	this->col_names.clear();
 	this->value_counts.clear();
