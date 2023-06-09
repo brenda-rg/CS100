@@ -21,10 +21,10 @@ void MainMenu::outputmain()
     cout << "5. Exit" << endl;
 cin >> option;
 
-while ((option != 1) && (option != 2) && (option != 3)) {
-        cout << "Error! Input option 1,2, or 3"<< endl;
+while ((option != 1) && (option != 2) && (option != 3)&& (option != 4) && (option != 5)) {
+        cout << "Error! Input option 1,2,3,4 or 5"<< endl;
          cin.clear();
-         cin.ignore(100, '\n');
+         cin.ignore(1000, '\n');
         cin >> option;
    }
 
@@ -66,7 +66,7 @@ void mainmenu::settingmenu(){
     while ((option != 1) && (option != 2)) {
         cout << "Error! Input option 1,2, or 3"<< endl;
          cin.clear();
-         cin.ignore(100, '\n');
+         cin.ignore(1000, '\n');
         cin >> option;
    }
   
@@ -81,7 +81,7 @@ void mainmenu::taskmenu(){
     while ((option != 1) && (option != 2) && (option != 3)) {
         cout << "Error! Input option 1,2, or 3"<< endl;
          cin.clear();
-         cin.ignore(100, '\n');
+         cin.ignore(1000, '\n');
         cin >> option;
    }
 }
