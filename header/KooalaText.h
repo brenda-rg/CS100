@@ -12,11 +12,12 @@ using namespace std;
 
 class KooalaText {
 	private:
-		KooalaText();
-		explicit KooalaText(string text);
+
 		string text;
 		string prepend;
 	public:
+		KooalaText();
+		explicit KooalaText(string text);
 
 		// Changes text value
 		void setText(string new_val);
