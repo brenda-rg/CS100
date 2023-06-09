@@ -41,7 +41,7 @@ typedef unsigned short int u16;
 ** Optionally #include a user-defined header, whereby compilation options
 ** may be set prior to where they take effect, but after platform setup.
 ** If SQLITE_CUSTOM_INCLUDE=? is defined, its value names the #include
-** file. Note that this macro has a like effect on sqlite3.c compilation.
+** file. Note that this macro has a like effect on sqlite.c compilation.
 */
 # define SHELL_STRINGIFY_(f) #f
 # define SHELL_STRINGIFY(f) SHELL_STRINGIFY_(f)
@@ -1363,7 +1363,7 @@ static void shellAddSchemaName(
 ** We need several support functions from the SQLite core.
 */
 
-/* #include "sqlite3.h" */
+/* #include "sqlite.h" */
 
 /*
 ** We need several things from the ANSI and MSVCRT headers.
@@ -10372,7 +10372,7 @@ int sqlite3_sqlar_init(
 */
 #if !defined(SQLITEEXPERT_H)
 #define SQLITEEXPERT_H 1
-/* #include "sqlite3.h" */
+/* #include "sqlite.h" */
 
 typedef struct sqlite3expert sqlite3expert;
 
@@ -10521,7 +10521,7 @@ const char *sqlite3_expert_report(sqlite3expert*, int iStmt, int eReport);
 /*
 ** Free an (sqlite3expert*) handle and all associated resources. There 
 ** should be one call to this function for each successful call to 
-** sqlite3-expert_new().
+** sqlite-expert_new().
 */
 void sqlite3_expert_destroy(sqlite3expert*);
 
@@ -12639,7 +12639,7 @@ void sqlite3_expert_destroy(sqlite3expert *p){
 #ifndef _SQLITE_RECOVER_H
 #define _SQLITE_RECOVER_H
 
-/* #include "sqlite3.h" */
+/* #include "sqlite.h" */
 
 #ifdef __cplusplus
 extern "C" {
@@ -26233,7 +26233,7 @@ static int do_meta_command(char *zLine, ShellState *p){
           }
           break;
 
-        /* sqlite3_test_control(int, int, sqlite3*) */
+        /* sqlite3_test_control(int, int, sqlite*) */
         case SQLITE_TESTCTRL_PRNG_SEED:
           if( nArg==3 || nArg==4 ){
             int ii = (int)integerValue(azArg[2]);
@@ -26274,7 +26274,7 @@ static int do_meta_command(char *zLine, ShellState *p){
           }
           break;
 
-        /* sqlite3_test_control(sqlite3*) */
+        /* sqlite3_test_control(sqlite*) */
         case SQLITE_TESTCTRL_INTERNAL_FUNCTIONS:
           rc2 = sqlite3_test_control(testctrl, p->db);
           isOk = 3;
@@ -27023,7 +27023,7 @@ static char *find_home_dir(int clearFlag){
 
 /*
 ** On non-Windows platforms, look for $XDG_CONFIG_HOME.
-** If ${XDG_CONFIG_HOME}/sqlite3/sqliterc is found, return
+** If ${XDG_CONFIG_HOME}/sqlite/sqliterc is found, return
 ** the path to it, else return 0. The result is cached for
 ** subsequent calls.
 */
@@ -27044,7 +27044,7 @@ static const char *find_xdg_config(void){
   if( zXdgHome==0 ){
     return 0;
   }
-  zConfig = sqlite3_mprintf("%s/sqlite3/sqliterc", zXdgHome);
+  zConfig = sqlite3_mprintf("%s/sqlite/sqliterc", zXdgHome);
   shell_check_oom(zConfig);
   if( access(zConfig,0)!=0 ){
     sqlite3_free(zConfig);
@@ -27303,7 +27303,7 @@ int SQLITE_CDECL wmain(int argc, wchar_t **wargv){
 #ifdef SQLITE_SHELL_FIDDLE
   stdin_is_interactive = 0;
   stdout_is_console = 1;
-  data.wasm.zDefaultDbName = "/fiddle.sqlite3";
+  data.wasm.zDefaultDbName = "/fiddle.sqlite";
 #else
   stdin_is_interactive = isatty(0);
   stdout_is_console = isatty(1);
@@ -28016,7 +28016,7 @@ int fiddle_export_db( int (*xCallback)(unsigned const char *zOut, int n) ){
 
 /*
 ** Trivial exportable function for emscripten. It processes zSql as if
-** it were input to the sqlite3 shell and redirects all output to the
+** it were input to the sqlite shell and redirects all output to the
 ** wasm binding. fiddle_main() must have been called before this
 ** is called, or results are undefined.
 */

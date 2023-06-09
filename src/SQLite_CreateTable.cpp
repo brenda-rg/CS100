@@ -33,8 +33,3 @@ int SQLite_CreateTable::createNewTable(vector<string> vars) {
 	int query_status = this->execute(createTableQuery);
 	return query_status;
 }
-
-bool SQLite_CreateTable::checkExist() {
-	string sql_query = "select count(type) from sqlite_master where type='table' and name='" + this->table_name +"';";
-	this->execute(sql_query);
-}
