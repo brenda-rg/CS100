@@ -1,5 +1,5 @@
 #ifdef USE_SYSTEM_SQLITE
-# include <sqlite3.h>
+# include <sqlite.h>
 #else
 #include "sqlite3.c"
 #endif
@@ -14,7 +14,7 @@
 **    May you share freely, never taking more than you give.
 **
 *************************************************************************
-** A TCL Interface to SQLite.  Append this file to sqlite3.c and
+** A TCL Interface to SQLite.  Append this file to sqlite.c and
 ** compile the whole thing to build a TCL-enabled version of SQLite.
 **
 ** Compile-time options:
@@ -193,7 +193,7 @@ struct SqliteDb {
 };
 
 struct IncrblobChannel {
-  sqlite3_blob *pBlob;      /* sqlite3 blob handle */
+  sqlite3_blob *pBlob;      /* sqlite blob handle */
   SqliteDb *pDb;            /* Associated database connection */
   int iSeek;                /* Current seek offset */
   Tcl_Channel channel;      /* Channel identifier */
@@ -595,7 +595,7 @@ static void delDatabaseRef(SqliteDb *pDb){
 }
 
 /*
-** TCL calls this procedure when an sqlite3 database command is
+** TCL calls this procedure when an sqlite database command is
 ** deleted.
 */
 static void SQLITE_TCLAPI DbDeleteCmd(void *db){
@@ -842,7 +842,7 @@ static void DbUnlockNotify(void **apArg, int nArg){
 */
 static void DbPreUpdateHandler(
   void *p,
-  sqlite3 *db,
+  sqlite *db,
   int op,
   const char *zDb,
   const char *zTbl,
@@ -1926,7 +1926,7 @@ static void DbHookCmd(
 ** whenever one of those connection-specific commands is executed
 ** in Tcl.  For example, if you run Tcl code like this:
 **
-**       sqlite3 db1  "my_database"
+**       sqlite db1  "my_database"
 **       db1 close
 **
 ** The first command opens a connection to the "my_database" database
@@ -2442,7 +2442,7 @@ static int SQLITE_TCLAPI DbObjCmd(
   ** as 'db changes' due to conflict-algorithm selected.
   **
   ** This code is basically an implementation/enhancement of
-  ** the sqlite3 shell.c ".import" command.
+  ** the sqlite shell.c ".import" command.
   **
   ** This command usage is equivalent to the sqlite2.x COPY statement,
   ** which imports file data into a table using the PostgreSQL COPY file format:
@@ -3702,7 +3702,7 @@ static int SQLITE_TCLAPI DbObjCmdAdaptor(
 #endif /* SQLITE_TCL_NRE */
 
 /*
-** Issue the usage message when the "sqlite3" command arguments are
+** Issue the usage message when the "sqlite" command arguments are
 ** incorrect.
 */
 static int sqliteCmdUsage(
@@ -3718,7 +3718,7 @@ static int sqliteCmdUsage(
 }
 
 /*
-**   sqlite3 DBNAME FILENAME ?-vfs VFSNAME? ?-key KEY? ?-readonly BOOLEAN?
+**   sqlite DBNAME FILENAME ?-vfs VFSNAME? ?-key KEY? ?-readonly BOOLEAN?
 **                           ?-create BOOLEAN? ?-nomutex BOOLEAN?
 **                           ?-nofollow BOOLEAN?
 **
@@ -3925,14 +3925,14 @@ static int SQLITE_TCLAPI DbMain(
 EXTERN int Sqlite3_Init(Tcl_Interp *interp){
   int rc = Tcl_InitStubs(interp, "8.4", 0) ? TCL_OK : TCL_ERROR;
   if( rc==TCL_OK ){
-    Tcl_CreateObjCommand(interp, "sqlite3", (Tcl_ObjCmdProc*)DbMain, 0, 0);
+    Tcl_CreateObjCommand(interp, "sqlite", (Tcl_ObjCmdProc*)DbMain, 0, 0);
 #ifndef SQLITE_3_SUFFIX_ONLY
     /* The "sqlite" alias is undocumented.  It is here only to support
-    ** legacy scripts.  All new scripts should use only the "sqlite3"
+    ** legacy scripts.  All new scripts should use only the "sqlite"
     ** command. */
     Tcl_CreateObjCommand(interp, "sqlite", (Tcl_ObjCmdProc*)DbMain, 0, 0);
 #endif
-    rc = Tcl_PkgProvide(interp, "sqlite3", PACKAGE_VERSION);
+    rc = Tcl_PkgProvide(interp, "sqlite", PACKAGE_VERSION);
   }
   return rc;
 }

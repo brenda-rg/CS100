@@ -69,7 +69,7 @@ BEGIN
       VALUE "CompanyName", "SQLite Development Team"
       VALUE "FileDescription", "SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."
       VALUE "FileVersion", SQLITE_VERSION
-      VALUE "InternalName", "sqlite3"
+      VALUE "InternalName", "sqlite"
       VALUE "LegalCopyright", "http://www.sqlite.org/copyright.html"
       VALUE "ProductName", "SQLite"
       VALUE "ProductVersion", SQLITE_VERSION
