@@ -9,14 +9,18 @@ using namespace std;
 
 DatabaseConnect::DatabaseConnect(string filename) {
 	this->database_filename = filename;
-	this->connection_check=false;
 }
 DatabaseConnect::~DatabaseConnect() {
 
 }
 
 bool DatabaseConnect::checkConnection(){
-	return this->connection_check;
+	if (this->db==NULL) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 void DatabaseConnect::openConnection(){
@@ -43,9 +47,6 @@ void DatabaseConnect::closeConnection() {
 
 		//automatically deletes the database that db points to and sets it to null
 		sqlite3_close(this->db);
-		this->connection_check = false;
 	}
 	return;
 }
-
-

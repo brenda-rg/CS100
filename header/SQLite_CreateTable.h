@@ -52,7 +52,6 @@ class SQLite_CreateTable:public SQLite_ReadTable {
 		* 3.
 		*/
 
-	 bool checkExist();
 };
 
 

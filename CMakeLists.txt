@@ -6,9 +6,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 
 # set(CMAKE_CXX_STANDARD 14)
 
-
-
-add_executable(Kooala
+set(SOURCE_FILES
         src/KooalaText.cpp
         src/main.cpp
         lib/logger/Logger.cpp
@@ -16,18 +14,28 @@ add_executable(Kooala
         src/SQLite_ReadTable.cpp
         src/SQLite_CreateTable.cpp
         src/SQLite_WriteTable.cpp
-        test/SQLite_DatabaseConnect_Test.cpp)
-
-add_executable(Kooal_Test
-
         )
 
-add_subdirectory(lib/sqlite_tarball)
+set(TEST_FILES
+        test/SQLite_DatabaseConnectTest.cpp
+        )
+
+add_executable(Kooala ${SOURCE_FILES})
+
+add_executable(Kooala_Test ${SOURCE_FILES} ${TEST_FILES})
+
+add_subdirectory(lib/sqlite)
+
 target_link_libraries(Kooala PUBLIC sqlite3)
-target_link_libraries(Kooala_Test PUBLIC sqlite3)
 target_include_directories(Kooala PUBLIC
         "${PROJECT_BINARY_DIR}"
-        "${PROJECT_SOURCE_DIR}/lib/sqlite_tarball"
+        "${PROJECT_SOURCE_DIR}/lib/sqlite"
+        )
+
+target_link_libraries(Kooala_Test PUBLIC sqlite3 GTest::gtest_main)
+target_include_directories(Kooala_Test PUBLIC
+        "${PROJECT_BINARY_DIR}"
+        "${PROJECT_SOURCE_DIR}/lib/sqlite"
         )
 
 include(FetchContent)
@@ -39,6 +47,5 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-target_link_libraries(Kooala_Test GTest::gtest_main)
 include(GoogleTest)
 gtest_discover_tests(Kooala_Test)
