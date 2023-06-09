@@ -10,6 +10,7 @@ class TaskBase {
 	protected:
 		int task_id;
         string task_name;
+        bool is_done;
         int generate_id();
 
 		public:
@@ -20,9 +21,11 @@ class TaskBase {
         ~TaskBase();
         //modifiers
         void set_name(string);
+        void set_status(bool);
         //accessors
         string get_name();
         int get_id();
+        string get_status();
 
 };
 

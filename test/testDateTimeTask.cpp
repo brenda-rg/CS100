@@ -9,9 +9,7 @@ TEST(DateTimeTask, test_Constructor) {
 }
 
 TEST(DateTimeTask, testConstructor_usingTaskBase) {
-
     TaskBase* baseTask = new TaskBase();
-
     EXPECT_NO_THROW(DateTimeTask* task = new DateTimeTask(baseTask));
 }
 
@@ -31,6 +29,13 @@ TEST(DateTimeTask, testConstructor_TaskBaseNamedValue) {
     DateTimeTask* task = new DateTimeTask(baseTask);
     
     EXPECT_EQ(baseTask->get_name() , task->get_name());
+}
+
+TEST(DateTimeTask, testConstructor_Date) {
+    EXPECT_NO_THROW(DateTimeTask* task = new DateTimeTask("12/14/2023"));
+}
+TEST(DateTimeTask, testConstructor_DateFail) {
+    EXPECT_THROW(DateTimeTask* task = new DateTimeTask("13/14/2023"), out_of_range);
 }
 
 TEST(DateTimeTask, test_addDate) {

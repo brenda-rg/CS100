@@ -28,16 +28,26 @@ TEST(TaskBase, testSetName_constructor) {
     EXPECT_EQ(task->get_name(), "monday");
 }
 
-// TEST(TaskBase, testSetName_constructor) {
-//     TaskBase* task = new TaskBase("monday");
-
-//     EXPECT_EQ(task->get_name(), "monday");
-// }
-
 TEST(TaskBase, testGetId) {
     TaskBase* task = new TaskBase();
 
     EXPECT_EQ(task->get_id(), 0);
+}
+
+TEST(TaskBase, testSetStatus) {
+    TaskBase* task = new TaskBase("monday");
+
+    EXPECT_NO_THROW(task->set_status(1));
+}
+
+TEST(TaskBase, testGetStatusTrue) {
+    TaskBase* task = new TaskBase("monday");
+    task->set_status(1);
+    EXPECT_EQ(task->get_status(), "Completed");
+}
+TEST(TaskBase, testGetStatusFalse) {
+    TaskBase* task = new TaskBase("monday");
+    EXPECT_EQ(task->get_status(), "Incomplete");
 }
 
 // uncomment when implemented sql

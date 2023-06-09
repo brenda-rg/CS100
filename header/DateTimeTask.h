@@ -14,6 +14,7 @@ class DateTimeTask : public TaskBase {
 	public:
         DateTimeTask();
         DateTimeTask(TaskBase*);
+        DateTimeTask(string);
         ~DateTimeTask();
         //functions
         void add_date(string);

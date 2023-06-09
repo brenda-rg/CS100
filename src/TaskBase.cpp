@@ -8,11 +8,14 @@ TaskBase::TaskBase() {
     this->task_id = 0;
     //this->task_id = generate_id();
     this->task_name = "";
+    this->is_done = 0;
+    
 }
 TaskBase::TaskBase(string name) {
     this->task_id = 0;
     //this->task_id = generate_id();
     this->task_name = name;
+    this->is_done = 0;
 }
 
 //destructor
@@ -30,6 +33,9 @@ int TaskBase::generate_id() {
 void TaskBase::set_name(string name) {
     this->task_name = name;
 }
+void TaskBase::set_status(bool status) {
+    this->is_done = status;
+}
 
 //accessors
 string TaskBase::get_name() {
@@ -37,6 +43,13 @@ string TaskBase::get_name() {
 }
 int TaskBase::get_id() {
     return this->task_id;
+}
+
+string TaskBase::get_status() {
+    if(this->is_done) {
+        return "Completed";
+    }
+    return "Incomplete";
 }
 
 #endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKBASE_CPP
