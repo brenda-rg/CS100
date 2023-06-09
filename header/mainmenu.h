@@ -19,20 +19,11 @@ class Mainmenu{
 class System: public Mainmenu{
     public:
     void settingmenu();
-};
-class User: public MainMenu{
-    public:
-    void loginscreen();
-};
-class collection: public MainMenu{
-    public:
+
     void collectionoptions();
-};
-class task: public MainMenu{
-    public:
+    
     void taskmenu();
-};
-class screencleared: public MainMenu {
-    public:
+
+
     void screencleared();
 };

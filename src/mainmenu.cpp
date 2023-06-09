@@ -45,6 +45,7 @@ break;
 case 3: 
 cout << "Task Colllection View Below:"
 //task collection function 
+//collectionoption(); here if we get to it
 break; 
 
 case 4:
