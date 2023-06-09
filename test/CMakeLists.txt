@@ -5,8 +5,8 @@ project(testing)
 add_subdirectory(googletest)
 include_directories(../header ../src)
 link_libraries(gtest gtest_main)
-set(SOURCE_FILES ../src/TaskBase.cpp ../src/DateTimeTask.cpp ../src/VerifyDate.cpp ../src/Tag.cpp ../src/TagTask.cpp)
-set(TEST_FILES testTaskBase.cpp testDateTimeTask.cpp testVerifyDate.cpp testTagTask.cpp testTag.cpp)
+set(SOURCE_FILES ../src/TaskBase.cpp ../src/DateTimeTask.cpp ../src/VerifyDate.cpp ../src/Tag.cpp ../src/TagTask.cpp ../src/PriorityTask.cpp)
+set(TEST_FILES testTaskBase.cpp testDateTimeTask.cpp testVerifyDate.cpp testTagTask.cpp testTag.cpp testPriorityTask.cpp)
 
 add_executable(runAllTests
     # testTaskBase.cpp
@@ -38,11 +38,12 @@ add_executable(tagTest
     ../src/Tag.cpp
     testTag.cpp
 )
-# add_executable(tagTaskTest
-#     ../src/TagTask.cpp
-#     ../src/Tag.cpp
-#     ../src/DateTimeTask.cpp
-#     ../src/TaskBase.cpp
-#     testTagTask.cpp
-# )
+add_executable(tagTaskTest
+    ${SOURCE_FILES}
+    testTagTask.cpp
+)
+add_executable(priorityTaskTest
+    ${SOURCE_FILES}
+    testPriorityTask.cpp
+)
 
