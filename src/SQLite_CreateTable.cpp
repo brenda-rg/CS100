@@ -1,7 +1,7 @@
 #include "../header/SQLite_CreateTable.h"
 
 #include<string>
-#include<sqlite3>
+#include<sqlite3.h>
 #include<cstdio>
 #include<stdexcept>
 #include<assert.h>
@@ -12,17 +12,17 @@ using namespace std;
 // https://www.tutorialspoint.com/sqlite/sqlite_c_cpp.htm
 
 
-void SQLite_CreateTable::createNewTable(vector<string> vars) {
-	assert(vars.sz()>0);
+int SQLite_CreateTable::createNewTable(vector<string> vars) {
+	assert(vars.size()>0);
 
 	string createTableQuery = "CREATE TABLE IF NOT EXISTS " + this->table_name + "(" + vars.front();
-	if (vars.sz() > 2) {
-		createTableQuery += ","
-		for (int i = 1; i < vars.sz() - 1; ++i) {
+	if (vars.size() > 2) {
+		createTableQuery += ",";
+		for (int i = 1; i < vars.size() - 1; ++i) {
 			createTableQuery += createTableQuery + ",";
 		}
 	}
-	if (vars.sz() > 1) {
+	if (vars.size() > 1) {
 		createTableQuery += vars.back();
 	}
 	createTableQuery += " );";
@@ -30,7 +30,8 @@ void SQLite_CreateTable::createNewTable(vector<string> vars) {
 	string errorMessage;
 
 
-	int query_status = this->execute(createTableQuery)
+	int query_status = this->execute(createTableQuery);
+	return query_status;
 }
 
 bool SQLite_CreateTable::checkExist() {

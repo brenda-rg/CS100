@@ -4,6 +4,8 @@
 
 #include<string>
 
+using namespace std;
+
 /* References
  * https://rollbar.com/guides/cpp/cpp-error-logging/
  * https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
@@ -15,12 +17,12 @@ enum LogPriority {
 
 class Logger {
 	private:
-		static LogPriority verbosity;
+		LogPriority verbosity;
 		string fpath_log;
 		bool use_local_time;
 	public:
 		Logger();
-		void add(LogPriority priority_level, string message);
+		void addEvent(LogPriority priority_level, string message);
 };
 
 // Sets the warning level of the logger

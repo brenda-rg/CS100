@@ -19,7 +19,7 @@ class SQLite_WriteTable: public SQLite_CreateTable {
 		using SQLite_CreateTable::SQLite_CreateTable;
 		// Constructor is same as parent classes. SQLite_WriteTable(table_name: string, db_filename:sting)
 
-		int insert(string row_values, string column_names, string other_flags);
+		int insert(string row_values, string column_names, string other_flags="");
 		/**
 		 * Parameters:
 		 * row_values: string Comma Separated SQL formatted Values for insert. Ex: "value1, value2, ..."
@@ -35,7 +35,7 @@ class SQLite_WriteTable: public SQLite_CreateTable {
 		 * the same as the amount of columns. Otherwise, specifying column_names will set those values to null for that row.
 		 */
 
-		int insertMany(vector<string> row_values, vector<string> col_names, string other_flags);
+		int insertMany(vector<string> row_values, string column_names, string other_flags="");
 		 /**
 		  *
 			* Returns:
@@ -47,7 +47,7 @@ class SQLite_WriteTable: public SQLite_CreateTable {
 			*
 		  */
 
-		 int update(string new_val, string column_name, string where, string other_flags);
+		 int update(string new_val, string column_name, string where, string other_flags="");
 		 /**
 		  * parameters:
 		  * new_val: The new value to be replaced
@@ -61,7 +61,7 @@ class SQLite_WriteTable: public SQLite_CreateTable {
 			* https://www.sqlite.org/rescode.html
 		  */
 
-		 int remove(string search_conditions, string other_flags);
+		 int remove(string search_conditions, string other_flags="");
 		 /**
 		  * Parameters:
 		  * search_conditions: A string with SQL style Boolean operator. Appended to "WHERE" in sql query. Ex: "col_1 = 2"

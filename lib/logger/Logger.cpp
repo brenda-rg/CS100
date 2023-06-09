@@ -21,7 +21,7 @@ Logger::Logger() {
 
 	this->verbosity=GLOBAL_LOG_VERBOSITY_LEVEL;
 	this->fpath_log=PATH_TO_LOG_FILE;
-	this->use_local_time=CONVERT_UTC_TO_LOCAL_TIME
+	this->use_local_time=CONVERT_UTC_TO_LOCAL_TIME;
 }
 /**
  * Priority Levels (Asccending)
@@ -30,17 +30,21 @@ Logger::Logger() {
 
 void Logger::addEvent(LogPriority priority_level, string message) {
 	string log_time_stamp;
-	tm curr_time = time(NULL);
+	time_t curr_time = time(NULL);
 	if (this->use_local_time) {
-		tm *tm = ctime(&curr_time);
-		log_time_stamp+="[Local Time: " + tm + "] ";
+		char time_buffer[100];
+		strftime(time_buffer,sizeof(time_buffer),"%F %T", localtime(&curr_time));
+		string time = time_buffer;
+		log_time_stamp+="[Local Time: " + time + "] ";
 	} else{
-		tm *tm = gmtime(&curr_time);
-		log_time_stamp+="[UTC Time: " + tm + "] ";
+		char time_buffer[100];
+		strftime(time_buffer, sizeof(time_buffer),"%F %T",  gmtime(&curr_time));
+		string time = time_buffer;
+		log_time_stamp+="[UTC Time: " + time + "] ";
 	}
 	string curr_log = log_time_stamp;
 	if (priority_level >= this->verbosity) {
-		switch(priority) {
+		switch(priority_level) {
 			case TraceP: curr_log += "[Trace:] \t"; break;
 			case DebugP: curr_log += "[Debug:] \t"; break;
 			case InfoP: curr_log += "[Info:] \t"; break;
@@ -50,4 +54,5 @@ void Logger::addEvent(LogPriority priority_level, string message) {
 			case NoLog: break;
 		}
 	}
+	curr_log += message + "\n";
 }

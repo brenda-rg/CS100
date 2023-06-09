@@ -6,7 +6,7 @@
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_SQL_CREATETABLE_H
 
 #include<string>
-#include<sqlite3>
+#include<sqlite3.h>
 #include<vector>
 
 #include "SQLite_DatabaseConnect.h"
@@ -18,7 +18,7 @@ using namespace std;
  * https://www.sqlitetutorial.net/sqlite-create-table/
  */
 
-class SQLite_CreateTable::public SQLite_ReadTable {
+class SQLite_CreateTable:public SQLite_ReadTable {
 	public:
 		using SQLite_ReadTable::SQLite_ReadTable;
 		/**
@@ -26,7 +26,7 @@ class SQLite_CreateTable::public SQLite_ReadTable {
 		 */
 
 		// accepts variables to be made with the table using SQL syntax
-		int createNewTable(string table_name, vector<string> vars);
+		int createNewTable(vector<string> vars);
 	 /** (Class Method Public)
 		* Parameter:
 	  * table_name: The name of the table

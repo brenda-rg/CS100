@@ -36,18 +36,24 @@ int callback(void *object, int argc, char **argv, char **azColName) {
 	return 0;
 }
 
-int SQLite_ReadTable::execute(string sql_query, bool use_callback = false){
+int SQLite_ReadTable::execute(string sql_query, bool use_callback){
 	if (!(this->checkConnection())){
 		this->openConnection();
 	}
 
 	char *zErrMsg = 0;
 	//const char* data = "Callback function called";
-
-	int query_status = sqlite3_exec(
-			this->db, sql_query.c_str(), callback,
-			static_cast<void*>(this), &zErrMsg
-			);
+	int query_status;
+	if (use_callback) {
+		query_status = sqlite3_exec(
+				this->db, sql_query.c_str(), callback,
+				static_cast<void *>(this), &zErrMsg
+		);
+	} else {
+		query_status = sqlite3_exec(
+				this->db, sql_query.c_str(), callback,0,&zErrMsg
+				);
+	}
 	assert(query_status==0);
 	this->sqlite_query_status.push_back(query_status);
 	// https://www.sqlite.org/rescode.html
@@ -68,19 +74,23 @@ int SQLite_ReadTable::selectAll() {
 	return query_status;
 }
 
-int SQLite_ReadTable::select(string col_names, string query_filter="") {
+int SQLite_ReadTable::select(string col_names, string query_filter, string other_flags) {
 	this->dumpData();
 	string sql_cmd = "SELECT " + col_names + " FROM " + this->table_name;
 	if (query_filter=="") {
 		sql_cmd+=";";
 	} else {
-		sql_cmd+=" WHERE " + query_filter + ";";
+		sql_cmd+=" WHERE " + query_filter;
 	}
+	if (other_flags!=""){
+		sql_cmd+=other_flags;
+	}
+	sql_cmd+=";";
 	int query_status = this->execute(sql_cmd, true);
 	return query_status;
 }
 
-int SQLite_ReadTable::dumpData() {
+void SQLite_ReadTable::dumpData() {
 	this->data.clear();
 	this->col_names.clear();
 	this->value_counts.clear();

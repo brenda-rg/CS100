@@ -89,7 +89,7 @@ public:
 		SQLite_ReadTable(string table_name, string db_filename)
 		: DatabaseConnect::DatabaseConnect(db_filename),  table_name(table_name) {}
 
-		int execute(string sql_query, bool use_callback);
+		int execute(string sql_query, bool use_callback=false);
 		/** (Class Function Protected)
 		 * void execute(string sql_query, bool use_callback = false)
 		 *
@@ -116,7 +116,7 @@ public:
 		 * For large tables the runtime and in-program memory usage is expensive.
 		 */
 
-		int select(string col_names,string query_filter, string other_flags);
+		int select(string col_names,string query_filter, string other_flags="");
 		/** (Class Function Public)
 		 * select(string query_filter)
 		 *
@@ -133,7 +133,7 @@ public:
 		 * string other_flags="": Optional input to add more flags to the select query.
 		 */
 
-		int dumpData();
+		void dumpData();
 		/** (Class Function Public)
 		 * dumpData()
 		 *
