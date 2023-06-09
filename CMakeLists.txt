@@ -21,6 +21,10 @@ add_executable(Kooala
 add_executable(Kooal_Test
 
         )
+add_executable(Task
+        src/main.cpp
+        src/TaskBase.cpp
+)
 
 add_subdirectory(lib/sqlite_tarball)
 target_link_libraries(Kooala PUBLIC sqlite3)
