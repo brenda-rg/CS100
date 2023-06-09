@@ -4,6 +4,8 @@
 #include <QStandardPaths>
 #include <QMessageBox>
 
+//Refrence for myself on button settings 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
