@@ -28,7 +28,7 @@ int InitializeDatabase::softCreateUserAccTable(){
 			this->database_filepath
 			);
 	vector<string> user_acc_vars;
-	user_acc_vars.push_back("user_id INTEGER PRIMARY KEY");
+	user_acc_vars.push_back("acc_id INTEGER PRIMARY KEY");
 	user_acc_vars.push_back("username TEXT UNIQUE");
 	user_acc_vars.push_back("password TEXT NOT NULL");
 	user_acc_vars.push_back("last_login TEXT");
