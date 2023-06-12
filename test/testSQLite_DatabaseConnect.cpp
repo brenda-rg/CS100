@@ -9,7 +9,7 @@ TEST(LocalDatabaseConnectInstance, constructor) {
 
 TEST(DatabaseConnection, openConnection) {
 	DatabaseConnect db(
-			"../test/test.db"
+			":memory:"
 			);
 	db.openConnection();
 	EXPECT_TRUE(db.checkConnection());
@@ -18,7 +18,7 @@ TEST(DatabaseConnection, openConnection) {
 
 TEST(DatabaseConnection, closeConnection) {
 	DatabaseConnect db(
-		"../test/test.db"
+		":memory:"
 	);
 	db.openConnection();
 	db.closeConnection();

@@ -1,7 +1,3 @@
-//
-// Created by Alex on 6/2/2023.
-//
-
 #ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_SQL_CREATETABLE_H
 #define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_SQL_CREATETABLE_H
 
@@ -20,7 +16,8 @@ using namespace std;
 
 class SQLite_CreateTable:public SQLite_ReadTable {
 	public:
-		using SQLite_ReadTable::SQLite_ReadTable;
+		SQLite_CreateTable(string table_name, string db_filepath)
+		: SQLite_ReadTable::SQLite_ReadTable(table_name, db_filepath) {}
 		/**
 		 * Uses same constructor as ReadTable
 		 */
