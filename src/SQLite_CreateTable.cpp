@@ -27,9 +27,6 @@ int SQLite_CreateTable::createNewTable(vector<string> vars) {
 	}
 	createTableQuery += " );";
 
-	string errorMessage;
-
-
 	int query_status = this->execute(createTableQuery);
 	return query_status;
 }

@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-#include "../header/Task.h"
-#include "../header/TaskList.h"
+#include "Task.h"
+#include "TaskList.h"
 
 using namespace std;
 

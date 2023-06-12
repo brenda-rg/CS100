@@ -8,20 +8,29 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 
 set(SOURCE_FILES
         src/KooalaText.cpp
-        src/main.cpp
         lib/logger/Logger.cpp
         src/SQLite_DatabaseConnect.cpp
         src/SQLite_ReadTable.cpp
         src/SQLite_CreateTable.cpp
         src/SQLite_WriteTable.cpp
-        )
-add_executable(Task
+        src/InitializeDatabase.cpp
+        src/KooalaText.cpp
         src/main.cpp
+        src/PriorityTask.cpp
+        src/DateTimeTask.cpp
+        src/Tag.cpp
+        src/TagTask.cpp
         src/TaskBase.cpp
-)
+        src/VerifyDate.cpp
+        )
 
 set(TEST_FILES
-        test/SQLite_DatabaseConnectTest.cpp
+        test/testSQLite_DatabaseConnect.cpp
+        test/testDateTimeTask.cpp
+        test/testTag.cpp
+        test/testTagTask.cpp
+        test/testTaskBase.cpp
+        test/testVerifyDate.cpp
         )
 
 add_executable(Kooala ${SOURCE_FILES})
