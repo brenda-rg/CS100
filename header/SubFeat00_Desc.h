@@ -13,3 +13,5 @@ private:
     KooalaText desc_name;
     KooalaText desc;
 };
+
+#endif
