@@ -31,7 +31,7 @@ set(TEST_FILES
         test/testTagTask.cpp
         test/testTaskBase.cpp
         test/testVerifyDate.cpp
-        )
+        test/testInitalizeDatabase.cpp)
 
 add_executable(Kooala ${SOURCE_FILES})
 
