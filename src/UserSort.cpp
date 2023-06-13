@@ -25,7 +25,7 @@ void UserSort::getTaskByAlpha(TaskList& tasklist) {
 }
 
 //might need fixing
-void UserSort::getTaskChrono(TaskList tasklist ) {
+void UserSort::getTaskChrono(TaskList& tasklist ) {
     for(int i = 0; i < tasklist.size(); i++) {
         for(int j = i+1; j < tasklist.size(); j++) {
             if(((tasklist.at(i)->get_year() > tasklist.at(j)->get_year()) || 
