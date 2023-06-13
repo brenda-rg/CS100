@@ -10,6 +10,8 @@
 
 using namespace std;
 
+//might be able to take the temp = nullptr but im not too sure
+
 void UserSort::getTaskByAlpha(TaskList& tasklist) {
     for(int i = 0; i < tasklist.size(); i++) {
         for(int j = i+1; j < tasklist.size(); j++) {
