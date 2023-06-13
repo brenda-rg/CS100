@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "../header/Task.h"
+#include "../header/TaskBase.h"
 #include "../header/TaskList.h"
 
 using namespace std;
@@ -18,12 +18,16 @@ class Mainmenu{
 };
 class System: public Mainmenu{
     public:
+
     void settingmenu();
 
     void collectionoptions();
     
     void taskmenu();
 
+    void password_Validation(string& new_password);
 
     void screencleared();
 };
+
+#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_MAINMENU_H
