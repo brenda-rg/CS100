@@ -45,7 +45,7 @@ void UserSort::getTaskChrono(TaskList tasklist ) {
 void UserSort::getTaskByPriority(TaskList& tasklist ) {
     for(int i = 0; i < tasklist.size(); i++) {
         for(int j = i+1; j < tasklist.size(); j++) {
-            if((tasklist.at(i)->get_priority() > taskList.at(j)->get_priority() && tasklist.at(j)->get_priority() != -1)|| (tasklist.at(i)->get_priority() == -1) {
+            if((tasklist.at(i)->get_priority() > taskList.at(j)->get_priority() && tasklist.at(j)->get_priority() != -1)|| (tasklist.at(i)->get_priority() == -1)) {
                 Task* temp = tasklist.at(i);
                 tasklist.at(i) = tasklist.at(j);
                 tasklist.at(j) = temp;
