@@ -9,6 +9,9 @@
 #include<vector>
 
 #include"Task.h"
+#include"TaskList.h"
+
+#include"Table_User.h"
 
 enum class login_status{valid_user, password_invalid, username_invalid};
 /**
@@ -18,21 +21,21 @@ enum class login_status{valid_user, password_invalid, username_invalid};
 
 enum class create_new_user_status{created_new_user, bad_username, bad_password};
 
-class User {
+class UserBase {
 	private:
+		Table_User user_table;
 		login_status valid_login;
 		int user_id;
 		string username;
 		string password;
 		string user_real_name;
-		vector<Task> task_list;
-
+		TaskList *tasks;
 
 	public:
-		User();
+		UserBase();
 		login_status attemptLogin(string username, string password);
-		create_new_user_status createNewUser(string username, string password);
-
+		create_new_user_status createNewUser(string username, string password, string real_name);
+		void generateUser();
 
 
 };

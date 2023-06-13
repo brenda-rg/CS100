@@ -10,7 +10,7 @@ class TaskBase {
 	protected:
 		int task_id;
 		string task_name;
-		bool is_done;
+		bool completion_status;
 		// int generate_id();
 
 	public:

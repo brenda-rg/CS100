@@ -11,10 +11,10 @@ using namespace std;
 
 class DateTimeTask : public TaskBase {
 	protected:
-        bool has_date;
-        int year;
-        int month;
-        int day;
+        bool has_date = false;
+        int year = -1;
+        int month = -1;
+        int day = -1;
 
 	public:
         DateTimeTask();

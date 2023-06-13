@@ -36,6 +36,15 @@ int callback(void *object, int argc, char **argv, char **azColName) {
 	return 0;
 }
 
+
+
+int SQLite_ReadTable::selectAll() {
+	this->dumpData();
+	string sql_cmd = "SELECT * FROM " + this->table_name + ";";
+	int query_status = this->execute(sql_cmd, true);
+	return query_status;
+}
+
 int SQLite_ReadTable::execute(string sql_query, bool use_callback){
 	if (!(this->checkConnection())){
 		this->openConnection();
@@ -44,15 +53,16 @@ int SQLite_ReadTable::execute(string sql_query, bool use_callback){
 	char *zErrMsg = 0;
 	//const char* data = "Callback function called";
 	int query_status;
+	SQLite_ReadTable* target = this;
 	if (use_callback) {
 		query_status = sqlite3_exec(
 				this->db, sql_query.c_str(), callback,
-				static_cast<void *>(this), &zErrMsg
+				static_cast<void*>(target), &zErrMsg
 		);
 	} else {
 		query_status = sqlite3_exec(
 				this->db, sql_query.c_str(), callback,0,&zErrMsg
-				);
+		);
 	}
 	assert(query_status==0);
 	this->sqlite_query_status.push_back(query_status);
@@ -64,13 +74,6 @@ int SQLite_ReadTable::execute(string sql_query, bool use_callback){
 	if (this->checkConnection()){
 		this->closeConnection();
 	}
-	return query_status;
-}
-
-int SQLite_ReadTable::selectAll() {
-	this->dumpData();
-	string sql_cmd = "SELECT * FROM " + this->table_name + ";";
-	int query_status = this->execute(sql_cmd, true);
 	return query_status;
 }
 
@@ -99,8 +102,16 @@ void SQLite_ReadTable::dumpData() {
 	return;
 }
 
+int SQLite_ReadTable::getSize(){
+	return this->data.size();
+}
+
 vector<vector<string>> SQLite_ReadTable::getData() {
 	return this->data;
+}
+
+string SQLite_ReadTable::getDataValue(int x, int y) {
+	return this->data[x][y];
 }
 
 vector<vector<string>> SQLite_ReadTable::getColNames() {

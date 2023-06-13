@@ -16,7 +16,8 @@ using namespace std;
 
 class SQLite_WriteTable: public SQLite_CreateTable {
 	public:
-		using SQLite_CreateTable::SQLite_CreateTable;
+		SQLite_WriteTable(string table_name, string database_filename)
+		: SQLite_CreateTable(table_name, database_filename) {}
 		// Constructor is same as parent classes. SQLite_WriteTable(table_name: string, db_filename:sting)
 
 		int insert(string row_values, string column_names, string other_flags="");

@@ -16,7 +16,8 @@ class PriorityTask : public TagTask {
         //constuctors
         PriorityTask();
         PriorityTask(TagTask*);
-        ~PriorityTask();
+        ~PriorityTask(
+						);
 
         //modifiers
         void set_priority(int);

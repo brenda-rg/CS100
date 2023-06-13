@@ -18,14 +18,14 @@ TagTask::TagTask() {
     this->year = 0;
     this->month = 0;
     this->day = 0;
-    this->is_done = 0;
+    this->completion_status = 0;
 }
 
 TagTask::TagTask(DateTimeTask* oldTask)  {
     this->tags_size = 0;
     this->task_id = 0;
     this->task_name = oldTask->get_name();
-    this->is_done = oldTask->get_status() == "Completed" ? 1:0;
+    this->completion_status = oldTask->get_status() == "Completed" ? 1:0;
     this->has_date = oldTask->get_status() == "Completed" ? 1:0;
     this->year = oldTask->get_year();
     this->month = oldTask->get_month();
@@ -36,15 +36,16 @@ TagTask::TagTask(DateTimeTask* oldTask)  {
 TagTask::~TagTask() {}
 
 //modifiers
-void TagTask::add_tag(string name) {
+string TagTask::add_tag(string name) {
     Tag newTag = Tag(name);
     if(this->tags_size < MAX_SIZE) {
         this->tags.push_back(newTag);
         ++(this->tags_size);
+				return name;
     }
     else {
-        throw out_of_range("Too many tags, please delete one before adding");
-    }
+			throw out_of_range("Too many tags, please delete one before adding");
+		}
 }
 
 void TagTask::delete_tag(string name) {
