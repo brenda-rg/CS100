@@ -8,12 +8,18 @@
 
 using namespace std;
 
+//make vector of finished or not
+//string vector of outputs
+
 SubFeat03_ToDoList::markFinished(int task_pos){
+    finished_task.at(task_pos) = 1;
+    fin_output.at(task_pos) = "[X]";
     
 }
 
 SubFeat03_ToDoList::markUnfinished(int task_pos){
-
+    finished_task.at(task_pos) = 0;
+    fin_output.at(task_pos) = "[ ]";
 }
 
 #endif

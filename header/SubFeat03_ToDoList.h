@@ -11,7 +11,8 @@ using namespace std;
 
 class SubFeat03_ToDoList : public SubFeatList {
 private:
-    vector<int>finished_task;
+    vector<bool>finished_task;
+    vector<string>fin_output;
     string curr_style;
     unordered_map<string style_name, string style_def>list_styles = {
         {"Finished", "[X]"}; 

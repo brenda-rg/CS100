@@ -10,11 +10,14 @@ using namespace std;
 class TaskSubFeatBase {
 protected:
     int displayOrder;
+    string origin_username;
 public:
     //void output_subfeat();
     int changeDisplayOrder(int newOrder);
+    TaskSubFeatBase(string username, string SubfeatName);
 private:
-
+    
 };
+
 
 #endif
