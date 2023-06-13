@@ -55,7 +55,10 @@ This new version of our UML helped us brekadown our code to simplify each class 
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application 
+ -repository name : kooala 
+ -git clone recursive - 
+ -cmake . 
+ -make
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ Unit testing running through ./kooala_test
  
