@@ -27,13 +27,13 @@ void UserSort::getTaskByAlpha(TaskList& tasklist) {
 }
 
 //might need fixing
-void UserSort::getTaskChrono(TaskList& tasklist ) {
+void UserSort::getTaskByChrono(TaskList& tasklist ) {
     for(int i = 0; i < tasklist.size(); i++) {
         for(int j = i+1; j < tasklist.size(); j++) {
-            if(((tasklist.at(i)->get_year() > tasklist.at(j)->get_year()) || 
+            if((((tasklist.at(i)->get_year() > tasklist.at(j)->get_year()) || 
             ((tasklist.at(i)->get_year() >= tasklist.at(j)->get_year()) && (tasklist.at(i)->get_month() > tasklist.at(j)->get_month())) ||
-            ((tasklist.at(i)->get_year() >= tasklist.at(j)->get_year()) && (tasklist.at(i)->get_month() >= tasklist.at(j)->get_month()) && (tasklist.at(i)->get_day() >= taskList.at(j)->get_day()))) ||
-             (!tasklist.at(i)->has_date))
+            ((tasklist.at(i)->get_year() >= tasklist.at(j)->get_year()) && (tasklist.at(i)->get_month() >= tasklist.at(j)->get_month()) && (tasklist.at(i)->get_day() >= tasklist.at(j)->get_day()))) && (tasklist.at(i).get_hasDate() && tasklist.at(j).get_hasDate())) ||
+             (!tasklist.at(i)->get_hasDate))
             {
                 Task* temp = tasklist.at(i);
                 tasklist.at(i) = tasklist.at(j);
