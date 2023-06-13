@@ -16,10 +16,13 @@ class PriorityTask : public TagTask {
         //constuctors
         PriorityTask();
         PriorityTask(TagTask*);
-        ~PriorityTask();
+        ~PriorityTask(
+						);
+
         //modifiers
         void set_priority(int);
         void remove_priority();
+
         //accessors
         int get_priority();
 };

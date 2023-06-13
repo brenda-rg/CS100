@@ -4,36 +4,53 @@
 //also include sql class
 #include <iostream>
 #include <vector>
-#include "../header/PriorityTask.cpp"
+#include <string>
+#include <unordered_map>
+
+#include "../header/PriorityTask.h"
+#include "../header/Task.h"
+
+#include"../header/Table_Task.h"
 
 using namespace std;
 
-class TaskList : public PriorityTask {
+class TaskList{
+	private:
+		string username;
+
 	protected:
-        vector<*Task> v;
         //if master list == 1 may be able to take out idk
-        bool is_schedule;
+        // bool is_schedule;
         //if added as a task
-        bool is_sublist;
+        // bool is_sublist;
+				Table_Task task_table;
+
+				vector<Task> tasks;
+				vector<string> task_names;
+				// unordered_map<string, Task*> task_map;
+
+
+
 
 		public:
         //constuctors
-        TaskList();
-        TaskList(Task*);
+        TaskList(string username);
+				~TaskList();
         //may not need to implement this idk
-        TaskList(vector<Task*>)
         //have to do delete for each task --> go through the vector
-        ~PriorityTask();
+        TaskList();
         //modifiers
         //create task using the string?
         // maybe pass in int instead and fix the int (task_id) stuff for TaskBase?
-        void add_task(string);
-        void edit_task(string);
-        void remove_task(string);
+        void add_task(Task new_task);
+        void edit_task(Task target, string column_name, string new_val);
+        void remove_task(Task target);
+
+				void pull_database();
+
         //accessors
-        string get_task(string);
+				Task get_task(int i);
         //could be int or iterator return value
-        iterator find_task(string);
 };
 
 

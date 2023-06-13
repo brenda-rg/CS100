@@ -23,7 +23,8 @@ class InitializeDatabase {
 		int softCreateSubfeatListItemTable();
 		int softCreateSubfeatFormTable();
 		int softCreateSubfeatFormItemTable();
-		int softCreateSubfeatTagsTable();
+		int softCreateTagsTable();
+		int softCreateTagLinksTable();
 		int softCreateAllTables();
 
 };

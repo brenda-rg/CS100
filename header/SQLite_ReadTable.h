@@ -103,7 +103,6 @@ public:
 		 * Any select is loaded into the function. If use_callback is true then the sqlite3_exec command uses
 		 * the callback function (Used for select, otherwise usually not used).
 		 *
-
 		 */
 
 		int selectAll();
@@ -142,6 +141,8 @@ public:
 		 * (data, value_counts, col_names, sql_log_data, error_messages)
 		 */
 
+		int getSize();
+
 		vector<vector<string>> getData();
 		/** (Class Function Public)
 		 * getData()
@@ -149,6 +150,8 @@ public:
 		 * returns:
 		 * this->data: vector<vector<string>>
 		 */
+
+		string getDataValue(int x, int y);
 
 		vector<vector<string>> getColNames();
 		/** (Class Function Public)

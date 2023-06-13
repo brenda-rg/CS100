@@ -9,15 +9,15 @@
 using namespace std;
 
 int InitializeDatabase::softCreateSettingsTable() {
-	SQLite_CreateTable global_table(
-			"global_settings",
+	SQLite_CreateTable settings_table(
+			"settings",
 			this->database_filepath
 	);
-	vector <string> global_table_vars;
-	global_table_vars.push_back("setting_id INTEGER PRIMARY KEY");
-	global_table_vars.push_back("setting_name TEXT NOT NULL");
-	global_table_vars.push_back("setting_value INTEGER NOT NULL");
-	int query_status = global_table.createNewTable(global_table_vars);
+	vector <string> settings_table_vars;
+	settings_table_vars.push_back("setting_id INTEGER PRIMARY KEY");
+	settings_table_vars.push_back("setting_name TEXT NOT NULL");
+	settings_table_vars.push_back("setting_value INTEGER NOT NULL");
+	int query_status = settings_table.createNewTable(settings_table_vars);
 	assert(query_status == 0);
 	return query_status;
 }
@@ -79,15 +79,25 @@ int InitializeDatabase::softCreateTaskTable() {
 	tasks_vars.push_back(
 			"task_id INTEGER PRIMARY KEY,"
 			"task_name TEXT NOT_NULL,"
-			"collection_id INTEGER"
+			"username TEXT NOT NULL,"
+			"completion_status INTEGER NOT NULL,"
+			"priority_val INTEGER NOT NULL,"
+			"has_date INTEGER NOT NULL,"
+			"has_time INTEGER NOT NULL,"
+			"year INTEGER NOT NULL,"
+			"month INTEGER NOT NULL,"
+			"day INTEGER NOT NULL,"
+			"hour INTEGER NOT NULL,"
+			"minute INTEGER NOT NULL"
 	);
 	int query_status = tasks_table.createNewTable(tasks_vars);
+	assert(query_status==0);
 	return query_status;
 }
 
 int InitializeDatabase::softCreateSubfeatDescTable(){
 	SQLite_CreateTable desc_table(
-			"subfeat_descriptions",
+			"subfeat_desc",
 			this->database_filepath
 			);
 	vector<string> desc_vars = {
@@ -103,7 +113,7 @@ int InitializeDatabase::softCreateSubfeatDescTable(){
 
 int InitializeDatabase::softCreateSubfeatListTable(){
 	SQLite_CreateTable list_table(
-			"subfeat_lists",
+			"subfeat_list",
 			this->database_filepath
 			);
 	vector<string> list_vars = {
@@ -121,7 +131,7 @@ int InitializeDatabase::softCreateSubfeatListTable(){
 
 int InitializeDatabase::softCreateSubfeatListItemTable() {
 	SQLite_CreateTable subfeat_list_item_table(
-			"subfeat_list_items",
+			"subfeat_list_item",
 			this->database_filepath
 			);
 	vector<string> subfeat_list_item_vars = {
@@ -171,18 +181,32 @@ int InitializeDatabase::softCreateSubfeatFormItemTable() {
 }
 
 
-int InitializeDatabase::softCreateSubfeatTagsTable() {
+int InitializeDatabase::softCreateTagsTable() {
 	SQLite_CreateTable subfeat_tags_table(
-			"subfeat_tags",
+			"tags",
 			this->database_filepath
 	);
 	vector<string> subfeat_tags_vars={
 			"tag_id INTEGER PRIMARY KEY,"
 			"origin_task_id INTEGER NOT NULL,"
-			"display_order INTEGER NOT NULL,"
 			"tag TEXT NOT NULL"
 	};
 	int query_status=subfeat_tags_table.createNewTable(subfeat_tags_vars);
+	assert(query_status==0);
+	return query_status;
+}
+
+int InitializeDatabase::softCreateTagLinksTable() {
+	SQLite_CreateTable subfeat_tag_links_table(
+			"tag_links",
+			this->database_filepath
+			);
+	vector<string> subfeat_tag_links_vars = {
+			"tag_link_id INTEGER PRIMARY KEY,"
+			"tag_id INTEGER,"
+			"task_id INTEGER"
+	};
+	int query_status = subfeat_tag_links_table.createNewTable(subfeat_tag_links_vars);
 	assert(query_status==0);
 	return query_status;
 }
@@ -198,10 +222,12 @@ int InitializeDatabase::softCreateAllTables(){
 	int subfeat_list_item_table_status = this->softCreateSubfeatListItemTable();
 	int subfeat_form_table_status=this->softCreateSubfeatFormTable();
 	int subfeat_form_item_table_status= this->softCreateSubfeatFormItemTable();
-	int subfeat_tags_table_status=this->softCreateSubfeatTagsTable();
+	int subfeat_tags_table_status=this->softCreateTagsTable();
+	int subfeat_tag_links_table_status=this->softCreateTagLinksTable();
 	int create_all_tables_status=(settings_table_status + user_acc_table_status + user_info_table_status
 			+ collection_of_tasks_table_status + task_table_status + subfeat_desc_table_status + subfeat_list_table_status
-			+ subfeat_list_item_table_status + subfeat_form_table_status + subfeat_form_item_table_status +
+			+ subfeat_list_item_table_status + subfeat_form_table_status + subfeat_form_item_table_status
+			+ subfeat_tag_links_table_status +
 			subfeat_tags_table_status);
 	assert(create_all_tables_status==0);
 	return create_all_tables_status;

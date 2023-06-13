@@ -8,14 +8,14 @@ TaskBase::TaskBase() {
     this->task_id = 0;
     //this->task_id = generate_id();
     this->task_name = "";
-    this->is_done = 0;
+    this->completion_status = 0;
     
 }
 TaskBase::TaskBase(string name) {
     this->task_id = 0;
     //this->task_id = generate_id();
     this->task_name = name;
-    this->is_done = 0;
+    this->completion_status = 0;
 }
 
 //destructor
@@ -24,17 +24,21 @@ TaskBase::~TaskBase() {}
 //functions
 
 //setters
+/*
 int TaskBase::generate_id() {
     //sql stuff
     cout << endl;
     cout << "---STUB---" << endl << "IMPLEMENT generate_id()" << endl;
     return -1;
 }
+*/
+
+
 void TaskBase::set_name(string name) {
     this->task_name = name;
 }
 void TaskBase::set_status(bool status) {
-    this->is_done = status;
+    this->completion_status = status;
 }
 
 //accessors
@@ -46,7 +50,7 @@ int TaskBase::get_id() {
 }
 
 string TaskBase::get_status() {
-    if(this->is_done) {
+    if(this->completion_status) {
         return "Completed";
     }
     return "Incomplete";

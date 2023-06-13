@@ -54,5 +54,5 @@ int SQLite_WriteTable::remove(string search_conditions, string other_flags){
 	}
 	query+=";";
 	int query_status=this->execute(query);
-	return query_status;aaaaa
+	return query_status;
 }

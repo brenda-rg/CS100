@@ -8,7 +8,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 
 set(SOURCE_FILES
         src/KooalaText.cpp
-        lib/logger/Logger.cpp
         src/SQLite_DatabaseConnect.cpp
         src/SQLite_ReadTable.cpp
         src/SQLite_CreateTable.cpp
@@ -21,8 +20,10 @@ set(SOURCE_FILES
         src/Tag.cpp
         src/TagTask.cpp
         src/TaskBase.cpp
+        src/TaskList.cpp
         src/VerifyDate.cpp
-        src/User.cpp header/User.h)
+        src/UserBase.cpp
+        src/Table_Base.cpp header/Table_Tags.h header/Table_TagLinks.cpp header/Table_TagLinks.h header/Table_User.h)
 
 set(TEST_FILES
         test/testSQLite_DatabaseConnect.cpp
