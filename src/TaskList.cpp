@@ -4,6 +4,7 @@
 //also include sql class
 #include <iostream>
 #include "../header/TaskList.h"
+#include "../Task.h"
 
 using namespace std;
 
@@ -23,6 +24,6 @@ void TaskList::remove_task(string);
 //accessors
 string TaskList::get_task(string);
 //could be int or iterator return value
-iterator TaskList::find_task(string);
+Task TaskList::find_task(string);
 
 #endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKLIST_CPP

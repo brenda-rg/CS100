@@ -17,9 +17,11 @@ class PriorityTask : public TagTask {
         PriorityTask();
         PriorityTask(TagTask*);
         ~PriorityTask();
+
         //modifiers
         void set_priority(int);
         void remove_priority();
+
         //accessors
         int get_priority();
 };

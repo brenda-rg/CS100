@@ -24,12 +24,16 @@ TaskBase::~TaskBase() {}
 //functions
 
 //setters
+/*
 int TaskBase::generate_id() {
     //sql stuff
     cout << endl;
     cout << "---STUB---" << endl << "IMPLEMENT generate_id()" << endl;
     return -1;
 }
+*/
+
+
 void TaskBase::set_name(string name) {
     this->task_name = name;
 }

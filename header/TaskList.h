@@ -4,24 +4,24 @@
 //also include sql class
 #include <iostream>
 #include <vector>
+#include <string>
 #include "../header/PriorityTask.cpp"
+#include "../header/Task.h"
 
 using namespace std;
 
 class TaskList : public PriorityTask {
 	protected:
-        vector<*Task> v;
         //if master list == 1 may be able to take out idk
         bool is_schedule;
         //if added as a task
         bool is_sublist;
+				vector<*Task> tasks;
 
 		public:
         //constuctors
-        TaskList();
-        TaskList(Task*);
+        TaskList(string username);
         //may not need to implement this idk
-        TaskList(vector<Task*>)
         //have to do delete for each task --> go through the vector
         ~PriorityTask();
         //modifiers
@@ -33,7 +33,7 @@ class TaskList : public PriorityTask {
         //accessors
         string get_task(string);
         //could be int or iterator return value
-        iterator find_task(string);
+        Task find_task(string);
 };
 
 

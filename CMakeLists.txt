@@ -22,7 +22,7 @@ set(SOURCE_FILES
         src/TagTask.cpp
         src/TaskBase.cpp
         src/VerifyDate.cpp
-        src/User.cpp header/User.h)
+        src/UserBase.cpp header/UserBase.h src/Task.cpp header/Task.h)
 
 set(TEST_FILES
         test/testSQLite_DatabaseConnect.cpp
