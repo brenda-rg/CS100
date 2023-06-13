@@ -12,7 +12,7 @@ using namespace std;
 
 class UserSort : public UserBase {
 	void getTaskByAlpha(TaskList&);
-    void getTaskChrono(TaskList&);
+    void getTaskByChrono(TaskList&);
     void getTaskByPriority(TaskList&);
 };
 
