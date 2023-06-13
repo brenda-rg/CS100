@@ -11,7 +11,7 @@ class TaskSubFeatBase {
 protected:
     int displayOrder;
 public:
-    void output_subfeat();
+    //void output_subfeat();
     int changeDisplayOrder(int newOrder);
 private:
 

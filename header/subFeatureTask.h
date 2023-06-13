@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class subFeatureTask {
+class Task: public subFeatureTask {
 protected:
 
 public:
