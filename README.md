@@ -53,7 +53,12 @@ This new version of our UML helped us brekadown our code to simplify each class 
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+<img width="624" alt="Kooala Screenshot 1" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/791608c4-49f3-4675-b4cd-56ce5d91867e">
+<img width="631" alt="kooala ss 2" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/3df3474c-4dea-4dc5-b0ed-1006908d367b">
+<img width="462" alt="kooala ss 3" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/ec7a19ae-3434-41b2-8fd2-abdd83eaa9fa">
+<img width="470" alt="kooala ss 4" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/bb50c5cb-680f-498f-9c33-29366216a2fd">
+<img width="457" alt="kooala ss 5" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/feb5650c-2ddc-48f3-8a30-04be8e7fdb1a">
+<img width="505" alt="Kooala ss 6" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/c86257ec-aa35-4934-bd9f-6e52296951a7">
  ## Installation/Usage
  -repository name : kooala 
  -git clone recursive - 
