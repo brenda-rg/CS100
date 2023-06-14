@@ -212,7 +212,7 @@ void Admin::displayEditTask() {
 
 void Admin::clearScreen()
 {
-	std::cout << std::string(20, '\n');
+	std::cout << std::string(50, '\n');
 }
 
 #endif
