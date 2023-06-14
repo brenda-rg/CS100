@@ -70,4 +70,7 @@ This new version of our UML helped us brekadown our code to simplify each class 
 
  ## Testing
  -Unit testing running through ./runAllTests
+ -Used Google Testing library for c++
+ -For testing the database, we used SQL's build in error codes to create assertions that would exit the program to prevent any lost work to the user.
+ -For testing the modules, we used valgrynd to target memory leaks that may occur.
  
