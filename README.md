@@ -59,6 +59,7 @@ This new version of our UML helped us brekadown our code to simplify each class 
 <img width="470" alt="kooala ss 4" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/bb50c5cb-680f-498f-9c33-29366216a2fd">
 <img width="457" alt="kooala ss 5" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/feb5650c-2ddc-48f3-8a30-04be8e7fdb1a">
 <img width="505" alt="Kooala ss 6" src="https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/c86257ec-aa35-4934-bd9f-6e52296951a7">
+
  ## Installation/Usage
  -repository name : kooala
  -git clone recursive - 
@@ -66,6 +67,7 @@ This new version of our UML helped us brekadown our code to simplify each class 
  -cmake . 
  -make
 -running bin/prog
+
  ## Testing
- -Unit testing running through ./runAlltest
+ -Unit testing running through ./runAllTests
  
