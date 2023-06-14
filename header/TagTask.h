@@ -1,5 +1,5 @@
-#ifndef TAGTASK_H
-#define TAGTASK_H
+#ifndef BACKUP_REF_TAGTASK_H
+#define BACKUP_REF_TAGTASK_H
 //also include sql class
 #include <iostream>
 #include "Tag.h"

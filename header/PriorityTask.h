@@ -1,5 +1,5 @@
-#ifndef PRIORITYTASK_H
-#define PRIORITYTASK_H
+#ifndef BACKUP_REF_PRIORITYTASK_H
+#define BACKUP_REF_PRIORITYTASK_H
 
 //also include sql class
 #include <iostream>
