@@ -1,5 +1,5 @@
-#ifndef BACKUP_REF_VERIFYDATE_H
-#define BACKUP_REF_VERIFYDATE_H
+#ifndef VERIFYDATE_H
+#define VERIFYDATE_H
 
 
 class VerifyDate {

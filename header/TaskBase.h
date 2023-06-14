@@ -1,5 +1,5 @@
-#ifndef BACKUP_REF_TASKBASE_H
-#define BACKUP_REF_TASKBASE_H
+#ifndef TASKBASE_H
+#define TASKBASE_H
 
 #include <iostream>
 #include <string>
