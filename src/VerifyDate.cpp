@@ -1,5 +1,5 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_VERIFYDATE_CPP
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_VERIFYDATE_CPP
+#ifndef VERIFYDATE_CPP
+#define VERIFYDATE_CPP
 
 #include <iostream>
 #include "../header/VerifyDate.h"
@@ -34,4 +34,4 @@ bool VerifyDate::verify_monthDayYear(int month, int day, int year) {
     return 0;
 }
 
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_VERIFYDATE_CPP
+#endif //VERIFYDATE_CPP

@@ -1,49 +1,23 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.20)
+project(Kooala)
 
-project(testing)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/src")
 
 add_subdirectory(googletest)
-include_directories(../header ../src)
+include_directories(header src)
 link_libraries(gtest gtest_main)
-set(SOURCE_FILES ../src/TaskBase.cpp ../src/DateTimeTask.cpp ../src/VerifyDate.cpp ../src/Tag.cpp ../src/TagTask.cpp ../src/PriorityTask.cpp)
-set(TEST_FILES testTaskBase.cpp testDateTimeTask.cpp testVerifyDate.cpp testTagTask.cpp testTag.cpp testPriorityTask.cpp)
+set(SOURCE_FILES ../src/Admin.cpp ../src/TaskBase.cpp ../src/DateTimeTask.cpp ../src/VerifyDate.cpp ../src/Tag.cpp ../src/TagTask.cpp ../src/PriorityTask.cpp ../src/TaskList.cpp ../src/UserSort.cpp)
+set(TEST_FILES testTaskBase.cpp testDateTimeTask.cpp testVerifyDate.cpp testTagTask.cpp testTag.cpp testPriorityTask.cpp testUserSort.cpp)
 
 add_executable(runAllTests
-    # testTaskBase.cpp
-    # testDateTimeTask.cpp
-    # testVerifyDate.cpp 
-    # testTagTask.cpp 
-    # testTag.cpp
-    ${TEST_FILES}
-    ${SOURCE_FILES}
+${TEST_FILES}
+${SOURCE_FILES}
 )
 
-add_executable(taskTest
-    ../src/TaskBase.cpp
-    testTaskBase.cpp
+add_executable(prog
+  ../src/main.cpp
+  ${SOURCE_FILES}
 )
 
-add_executable(dateTaskTest
-    ../src/DateTimeTask.cpp
-    testDateTimeTask.cpp
-    ../src/TaskBase.cpp
-    ../src/VerifyDate.cpp
-)
-
-add_executable(verifyDateTest
-    ../src/VerifyDate.cpp
-    testVerifyDate.cpp
-)
-add_executable(tagTest
-    ../src/Tag.cpp
-    testTag.cpp
-)
-add_executable(tagTaskTest
-    ${SOURCE_FILES}
-    testTagTask.cpp
-)
-add_executable(priorityTaskTest
-    ${SOURCE_FILES}
-    testPriorityTask.cpp
-)
-
+#TARGET_COMPILE_DEFINITIONS(runAllTests PRIVATE gtest_disable_pthreads=ON)

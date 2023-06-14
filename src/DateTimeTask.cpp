@@ -8,8 +8,7 @@
 using namespace std;
 
 DateTimeTask::DateTimeTask() {
-    this->task_name = "";
-    this->task_id = 0;
+    TaskBase();
     this->has_date = 0;
     this->year = 0;
     this->month = 0;
@@ -23,6 +22,7 @@ DateTimeTask::DateTimeTask(TaskBase* oldTask) {
     this->month = 0;
     this->day = 0;
 }
+
 DateTimeTask::DateTimeTask(string date) {
     this->task_name = "";
     this->task_id = 0;
@@ -73,4 +73,7 @@ int DateTimeTask::get_month() {
 int DateTimeTask::get_day() {
    return this->day;
    
+}
+bool DateTimeTask::get_hasDate() {
+    return this->has_date;
 }

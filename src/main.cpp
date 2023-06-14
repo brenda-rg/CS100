@@ -1,13 +1,11 @@
 #include <iostream>
+#include "../header/Admin.h"
 
+int main() {
 
-//#include "../header/Mainmenu.h"
-//main will prompt out everything the user needs to the screen
-int main(){
-//call the mainmenu
-//MainMenu userscreen;
-//output the main
-//userscreen.outputmain();
+    Admin user;
 
-return 0; 
+    user.displayMainMenu();
+
+    return 0;
 }

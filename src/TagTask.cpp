@@ -1,5 +1,5 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TAGTASK_CPP
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TAGTASK_CPP
+#ifndef TAGTASK_CPP
+#define TAGTASK_CPP
 
 const int MAX_SIZE = 10;
 //also include sql class
@@ -11,14 +11,8 @@ const int MAX_SIZE = 10;
 using namespace std;
 
 TagTask::TagTask() {
-    this->tags_size = 0;
-    this->task_id = 0;
-    this->task_name = "";
-    this->has_date = 0;
-    this->year = 0;
-    this->month = 0;
-    this->day = 0;
-    this->is_done = 0;
+    DateTimeTask();
+    tags_size = 0;
 }
 
 TagTask::TagTask(DateTimeTask* oldTask)  {
@@ -82,4 +76,4 @@ vector<Tag>::iterator TagTask::find_tag(string name) {
 }
 
 
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TAGTASK_CPP
+#endif //TAGTASK_CPP

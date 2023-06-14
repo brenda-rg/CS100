@@ -1,5 +1,5 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITYTASK_H
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITYTASK_H
+#ifndef BACKUP_REF_PRIORITYTASK_H
+#define BACKUP_REF_PRIORITYTASK_H
 
 //also include sql class
 #include <iostream>
@@ -15,14 +15,18 @@ class PriorityTask : public TagTask {
 		public:
         //constuctors
         PriorityTask();
+        PriorityTask(string);
+        PriorityTask(string, int);
         PriorityTask(TagTask*);
         ~PriorityTask();
+
         //modifiers
         void set_priority(int);
         void remove_priority();
+
         //accessors
         int get_priority();
 };
 
 
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITY_H
+#endif //BACKUP_REF_PRIORITYTASK_H

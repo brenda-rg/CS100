@@ -1,8 +1,12 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_DATETIMETASK_H
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_DATETIMETASK_H
+#ifndef DATETIMETASK_H
+#define DATETIMETASK_H
+
+#include<string>
 
 #include "../header/TaskBase.h"
 #include "../header/VerifyDate.h"
+
+using namespace std;
 
 class DateTimeTask : public TaskBase {
 	protected:
@@ -22,7 +26,8 @@ class DateTimeTask : public TaskBase {
         int get_month();
         int get_year();
         int get_day();
+        bool get_hasDate();
 };
 
 
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_DATETIMETASK_H
+#endif //DATETIMETASK_H

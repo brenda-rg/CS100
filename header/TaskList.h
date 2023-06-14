@@ -1,40 +1,31 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKLIST_H
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKLIST_H
+#ifndef TASKLIST_H
+#define TASKLIST_H
 
-//also include sql class
 #include <iostream>
 #include <vector>
-#include "../header/PriorityTask.cpp"
+#include <string>
+#include "../header/Task.h"
+#include "../header/PriorityTask.h"
 
 using namespace std;
 
-class TaskList : public PriorityTask {
-	protected:
-        vector<*Task> v;
-        //if master list == 1 may be able to take out idk
-        bool is_schedule;
-        //if added as a task
-        bool is_sublist;
+class TaskList {
+    friend class PriorityTask;
+    protected:
+        vector<PriorityTask> tasks;
+        string name;
+        int size;
+        void updateTaskId();
 
-		public:
-        //constuctors
+    public:
         TaskList();
-        TaskList(Task*);
-        //may not need to implement this idk
-        TaskList(vector<Task*>)
-        //have to do delete for each task --> go through the vector
-        ~PriorityTask();
-        //modifiers
-        //create task using the string?
-        // maybe pass in int instead and fix the int (task_id) stuff for TaskBase?
-        void add_task(string);
-        void edit_task(string);
-        void remove_task(string);
-        //accessors
-        string get_task(string);
-        //could be int or iterator return value
-        iterator find_task(string);
+        void addTask(string);
+        void removeTask(int);
+        void editTask(int, int);
+        void displayTaskList();
+        vector<PriorityTask>::iterator findTask(int);
+        int getTaskSize();
+        vector<PriorityTask> & getTasks();
 };
 
-
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_TASKLIST_H
+#endif //TASKLIST_H

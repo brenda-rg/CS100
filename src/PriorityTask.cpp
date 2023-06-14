@@ -1,5 +1,5 @@
-#ifndef FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITYTASK_CPP
-#define FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITYTASK_CPP
+#ifndef PRIORITYTASK_CPP
+#define PRIORITYTASK_CPP
 
 //also include sql class
 #include <iostream>
@@ -8,14 +8,8 @@
 using namespace std;
 //constuctors
 PriorityTask::PriorityTask() {
-    this->priority = -1;
-    this->tags_size = 0;
-    this->task_id = 0;
-    this->task_name = "";
-    this->has_date = 0;
-    this->year = 0;
-    this->month = 0;
-    this->day = 0;
+    TagTask();
+    priority = -1;
 }
 PriorityTask::PriorityTask(TagTask* oldTask) {
     this->priority = -1;
@@ -28,6 +22,19 @@ PriorityTask::PriorityTask(TagTask* oldTask) {
     this->month = oldTask->get_month();
     this->day = oldTask->get_day();
 }
+
+PriorityTask::PriorityTask(string n) {
+    TagTask();
+    priority = -1;
+    task_name = n;
+}
+PriorityTask::PriorityTask(string n, int s) {
+    TagTask();
+    priority = -1;
+    task_name = n;
+    task_id = s;
+}
+
 PriorityTask::~PriorityTask() {}
 //modifiers
 //should we give a range for the priority values? 1-10?
@@ -45,4 +52,4 @@ int PriorityTask::get_priority() {
     return this->priority;
 }
 
-#endif //FINAL_PROJECT_BROJA016_AOROZ064_ANGUY344_IKALU001_PRIORITYTASK_CPP
+#endif //PRIORITYTASK_CPP
