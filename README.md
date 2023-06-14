@@ -2,67 +2,48 @@
 
 # Kooala
 
- > Authors: [Alexandar Nguyen](https://github.com/Xander-git), [Brenda Rojas](https://github.com/brenda-rg), [Abigail Orozco B](https://github.com/aoroz064), [Iheanyichukwu Kalu-Okere](https://github.com/Ikkoding)
+ Authors: [Alexandar Nguyen](https://github.com/Xander-git), [Brenda Rojas](https://github.com/brenda-rg), [Abigail Orozco B](https://github.com/aoroz064), [Iheanyichukwu Kalu-Okere](https://github.com/Ikkoding)
 
 ## Project Description
 
-> A task scheduler is an interesting project idea for our team to build because we utilize some form of schedule on a daily basis. We all have some form of improvement we would like to see from our task scheduler and we feel the most invested in this topic. We are looking for something that is better tailored for juggling our schedules, while also still being a robust software that anyone can use.
+ A task scheduler is an interesting project idea for our team to build because we utilize some form of schedule on a daily basis. We all have some form of improvement we would like to see from our task scheduler and we feel the most invested in this topic. We are looking for something that is better tailored for juggling our schedules, while also still being a robust software that anyone can use.
 
 ## Code/Tools used in development
-> C++, Visual Studio Code, Git, Valgrind, Vim, Github, Cmake
+ C++, Visual Studio Code, Git, Valgrind, Vim, Github, Cmake, Sqlite Tools, Miro
 
 ## Inputs & Outputs
-> Inputs: Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
+ Inputs: Some of the inputs include: The user will be able to enter the specific event that they wants to modify/add, the due dates of the events, the action they want to make, type of event they want to add (category).
 
-> Outputs: Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
+ Outputs: Some Outputs include: The program will have the option of printing whole schedule in the terminal, printing due dates and task, printing event times from the schedule in the terminal, or printing specified list/sublist in the program.
 
 ## Features
-> This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
-> Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
+This program will provide custom form templates for event types, calculate remaining time until task due date, provide encouraging messages to motivate and engage users more directly, automate breakdown of task, provide the ability to switch  of different features to declutter UI, add custom tags for tasks in terms of importance, input test dates and important events and automatically update teh calendar. 
+Depending on time constraints we may also implement GUI for easier inputting, custom backgrounds, text reminders in place of phone notifications.
 
- > ## Phase II
- > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
- > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Break down the "Epics" into smaller actionable user stories (i.e. smaller development tasks). Convert them into issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team. Then, once the sprint is over you should be repeating these steps to plan a new sprint, taking you until your second scrum meeting with the reader in phase III.
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 6. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
 ## User Interface Specification
- > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
+![User Navigation Diagram](https://user-images.githubusercontent.com/129914485/236547397-c2e2ad40-c8bc-43a8-b3f8-447914ab99c4.jpg)
+The drawn illustration demonstrates how the user will navigate through the program as it’s executed. The user will run the program and come into a start menu. There, the user will have one of the 2 options, either going into the To-Do list or into Settings. At that point, the user will have the ability to perform specific actions depending on the option they decide to select. The user will be able to perform actions such as adding tasks, editing tasks, or turning off and on features in Settings. The user will then be able to exit back to the start menu or exit the program. 
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+![Screen Layout-1](https://user-images.githubusercontent.com/129914320/236967535-13452a1f-275b-4388-8fa8-1183ea2331e0.png)
+![Screen Layout-2](https://user-images.githubusercontent.com/129914320/236967560-816a9616-5071-4fa3-9757-4fd2194b4894.png)
+![Screen Layout-3](https://user-images.githubusercontent.com/129914320/236967573-38e2d09f-8bba-4e68-b3dc-2db43fb92866.png)
+
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
- 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+The UML diagram includes the sequence in which our project will flow from beginning to end. Our first class will be the beginning of the program which will start with the menu_base class. In this function, we will begin the task scheduler and go into the Start_Menu class. Once we go into the Start_Menu class, we will prompt the user so that they can select the menu option they want to go in. We will then prompt the user to enter a username and password with the corresponding functions listed. The LoginMenu will be dependent on the Start_Menu function and will collect the database information from the user. The task scheduler will then go into the  UserProfiletable class that will have a vector to fill in the user table with the information inputted in the loginMenu class. The User class will then validate that the user will input a proper username and password and jump into the listCollection class where functions of different lists will be called. The user will have the ability to see the most recent list, the task list due today, and a full view of a task list. This class will jump into the Task class and TaskList where the user will be able to edit the name of the task, the date, the description, add a task or add a form with the provided functions in these classes. This class will then set flags to check what dates the task is due and then exit out of the program as prompted. The User class can also access the SettingsMenu class, which is able to change or output the current settings of the program. 
+![image](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/f6f07bd6-7053-4f9c-b1d7-ab2b8c77f44b)
+![image](https://github.com/cs100/final-project-broja016-aoroz064-anguy344-ikalu001/assets/129914485/857d5859-ec31-4d55-a868-eb56dab9dc49)
 
+
+
+The solid principles that were applied to the new UML diagram were the single responsibility principle and the interface segregation principle. We applied SRP to our classes and applied the interface segregation principle to our task scheduler in regard to our features. These soild principles helped organize our UML and made it easier to begin working on code. 
+We modified our UML so that our classes only had a signle responsibility for our task scheduler so that changes could only be made in specific code. We applied this by creating new classes and rearranging functions in the classes. By using ISP, the user can decide whether or not they want to turn on the provided features, giving them the option to costumize their scheduler rather than forcing the features to remain on. 
+
+This new version of our UML helped us brekadown our code to simplify each class and its responsibility contained. The updated UML gave us a better understanding of how our code was going to flow in terms of the user aspect. By doing so, we were able to plan the workflow we wanted to accomplish for our sprints. 
+ 
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
@@ -74,7 +55,10 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ -repository name : kooala 
+ -git clone recursive - 
+ -cmake . 
+ -make
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ Unit testing running through ./kooala_test
  
