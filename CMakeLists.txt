@@ -23,7 +23,9 @@ set(SOURCE_FILES
         src/TaskList.cpp
         src/VerifyDate.cpp
         src/UserBase.cpp
-        src/Table_Base.cpp header/Table_Tags.h header/Table_TagLinks.cpp header/Table_TagLinks.h header/Table_User.h)
+        src/Table_Base.cpp
+        src/Task.cpp
+        header/Table_Tags.h header/Table_TagLinks.cpp header/Table_TagLinks.h header/Table_User.h)
 
 set(TEST_FILES
         test/testSQLite_DatabaseConnect.cpp

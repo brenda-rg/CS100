@@ -69,7 +69,7 @@ TEST(testCreateTable, subfeatFormItemTable){
 
 TEST(testCreateTable, subfeatTagsTable) {
 	InitializeDatabase test(":memory:");
-	int status = test.softCreateSubfeatTagsTable();
+	int status = test.softCreateTagsTable();
 	EXPECT_EQ(status,0);
 }
 

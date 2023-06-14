@@ -19,13 +19,9 @@ class Table_Task: public Table_Base {
 				"hour","minute"
 		};
 
-		vector<string> insert_key = {
-				"task_name", "username",
-				"completion_status", "priority_val",
-				"has_date","has_time",
-				"year","month","day",
-				"hour","minute"
-		};
+		string insert_key =(
+				"task_name, username, "
+				"completion_status,priority_val, has_date, has_time, year, month, day, hour, minute");
 
 	public:
 		Table_Task()

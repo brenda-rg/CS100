@@ -37,25 +37,25 @@ Task::Task(
 void Task::addDatabaseEntry() {
 
 	if (this->task_id == -1) {
-		vector <string> row_vals = {
-				this->task_name, this->origin_username,
-				to_string(this->completion_status), to_string(this->priority),
-				to_string(this->has_date), to_string(this->has_time),
-				to_string(this->year), to_string(this->month), to_string(this->day),
-				to_string(this->hour), to_string(this->minute)
-		};
+		string row_vals =(
+				this->task_name  +","+  this->origin_username + "," +
+				to_string(this->completion_status) + "," +  to_string(this->priority) + "," +
+				to_string(this->has_date) + "," +  to_string(this->has_time) + "," +
+				to_string(this->year) + "," +  to_string(this->month) + "," +  to_string(this->day) + "," +
+				to_string(this->hour) +  to_string(this->minute) );
+
 		this->task_table.insert(
 				row_vals,
 				this->task_table.getInsertKey()
 		);
 	}
 
-	string where_cond = ( "((task_name = " + this->task + ") AND (username = "
-												+ this->origin_username + ") AND (year = " + this->year + ") AND (month = " + this->month + ")"
+	string where_cond = ( "((task_name = " + this->task_name + ") AND (username = "
+												+ this->origin_username + ") AND (year = " + to_string(this->year) + ") AND (month = " + to_string(this->month) + ")"
 												+ ");" );
 
 	this->task_table.select("*", where_cond, " ORDER BY task_id DESC");
-	this->task_id = task_table.getDataValue(0, 0);
+	this->task_id = stoi(task_table.getDataValue(0, 0));
 
 }
 

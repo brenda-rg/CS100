@@ -13,14 +13,14 @@ class Table_Base :public SQLite_WriteTable{
 	protected:
 		string kooala_database_filepath="../bin/KooalaDatabase.db";
 		string primary_key;
-		vector<string> insert_key;
+		string insert_key;
 
 	public:
 		Table_Base(string table_name)
 		: SQLite_WriteTable(table_name, this->kooala_database_filepath){}
 
 		int getFullTableSize();
-		vector<string> getInsertKey() {return this->insert_key;}
+		string getInsertKey() {return this->insert_key;}
 };
 
 
